@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD6510DE158903AE0046036E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
+		CD6510E8158903AE0046036E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6510E6158903AE0046036E /* InfoPlist.strings */; };
+		CD6510EA158903AE0046036E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6510E9158903AE0046036E /* main.m */; };
+		CD6510EE158903AF0046036E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD6510EC158903AF0046036E /* Credits.rtf */; };
+		CD6511411589055A0046036E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6511401589055A0046036E /* Carbon.framework */; };
+		CD65114C15890C730046036E /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD651145158907650046036E /* ApplicationServices.framework */; };
+		CD65116215890ECA0046036E /* MenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD65116015890ECA0046036E /* MenuBar.m */; };
+		CD65116B158910B20046036E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD65116A158910B20046036E /* MainMenu.xib */; };
+		CD651170158915810046036E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6511121589043B0046036E /* AppDelegate.m */; };
+		CD651174158915D00046036E /* UIElementUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD651138158904E50046036E /* UIElementUtilities.m */; };
+		CD651175158915E30046036E /* ProcessPerformedAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CD651117158904490046036E /* ProcessPerformedAction.m */; };
+		CD651176158916030046036E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CD65111B158904520046036E /* Constants.m */; };
+		CD726E4A1598A7200019BAEB /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD651188158A51060046036E /* Growl Registration Ticket.growlRegDict */; };
+		CDC146AF15A3694D00599273 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC146AE15A3694D00599273 /* Growl.framework */; };
+		CDC146B015A3697300599273 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDC146AE15A3694D00599273 /* Growl.framework */; };
+		CDC1471E15A36E9900599273 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1470E15A36E9900599273 /* DDAbstractDatabaseLogger.h */; };
+		CDC1471F15A36E9900599273 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1470F15A36E9900599273 /* DDAbstractDatabaseLogger.m */; };
+		CDC1472015A36E9900599273 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471015A36E9900599273 /* DDASLLogger.h */; };
+		CDC1472115A36E9900599273 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471115A36E9900599273 /* DDASLLogger.m */; };
+		CDC1472215A36E9900599273 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471215A36E9900599273 /* DDFileLogger.h */; };
+		CDC1472315A36E9900599273 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471315A36E9900599273 /* DDFileLogger.m */; };
+		CDC1472415A36E9900599273 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471415A36E9900599273 /* DDLog.h */; };
+		CDC1472515A36E9900599273 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471515A36E9900599273 /* DDLog.m */; };
+		CDC1472615A36E9900599273 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471615A36E9900599273 /* DDTTYLogger.h */; };
+		CDC1472715A36E9900599273 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471715A36E9900599273 /* DDTTYLogger.m */; };
+		CDC1472815A36E9900599273 /* ContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471915A36E9900599273 /* ContextFilterLogFormatter.h */; };
+		CDC1472915A36E9900599273 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471A15A36E9900599273 /* ContextFilterLogFormatter.m */; };
+		CDC1472A15A36E9900599273 /* DispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1471B15A36E9900599273 /* DispatchQueueLogFormatter.h */; };
+		CDC1472B15A36E9900599273 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1471C15A36E9900599273 /* DispatchQueueLogFormatter.m */; };
+		CDC1472C15A36E9900599273 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDC1471D15A36E9900599273 /* README.txt */; };
+		CDDE2FE31590777E008C8233 /* eve_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDDE2FE21590777E008C8233 /* eve_icon.icns */; };
+		CDDED832159062C40003B331 /* AdditionalShortcuts.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDED831159062C40003B331 /* AdditionalShortcuts.plist */; };
+		CDEB2625159B1C76002F77A1 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CDEB2624159B1C76002F77A1 /* Credits.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDDED833159064260003B331 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDC146B015A3697300599273 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CD6510D9158903AE0046036E /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6510DD158903AE0046036E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CD6510E0158903AE0046036E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		CD6510E1158903AE0046036E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CD6510E2158903AE0046036E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CD6510E5158903AE0046036E /* EVE-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EVE-Info.plist"; sourceTree = "<group>"; };
+		CD6510E7158903AE0046036E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD6510E9158903AE0046036E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD6510EB158903AF0046036E /* EVE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EVE-Prefix.pch"; sourceTree = "<group>"; };
+		CD6510ED158903AF0046036E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		CD6510FB158903AF0046036E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CD651102158903AF0046036E /* EVETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EVETests-Info.plist"; sourceTree = "<group>"; };
+		CD651104158903AF0046036E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD651106158903AF0046036E /* EVETests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVETests.h; sourceTree = "<group>"; };
+		CD651107158903AF0046036E /* EVETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVETests.m; sourceTree = "<group>"; };
+		CD6511111589043B0046036E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CD6511121589043B0046036E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CD651116158904490046036E /* ProcessPerformedAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessPerformedAction.h; sourceTree = "<group>"; };
+		CD651117158904490046036E /* ProcessPerformedAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessPerformedAction.m; sourceTree = "<group>"; };
+		CD65111A158904520046036E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CD65111B158904520046036E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		CD651137158904E50046036E /* UIElementUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIElementUtilities.h; sourceTree = "<group>"; };
+		CD651138158904E50046036E /* UIElementUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIElementUtilities.m; sourceTree = "<group>"; };
+		CD6511401589055A0046036E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		CD651145158907650046036E /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		CD65115F15890ECA0046036E /* MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBar.h; sourceTree = "<group>"; };
+		CD65116015890ECA0046036E /* MenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBar.m; sourceTree = "<group>"; };
+		CD65116A158910B20046036E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		CD651188158A51060046036E /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		CDC146AE15A3694D00599273 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = EVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
+		CDC1470E15A36E9900599273 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		CDC1470F15A36E9900599273 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		CDC1471015A36E9900599273 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		CDC1471115A36E9900599273 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		CDC1471215A36E9900599273 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		CDC1471315A36E9900599273 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		CDC1471415A36E9900599273 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		CDC1471515A36E9900599273 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		CDC1471615A36E9900599273 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		CDC1471715A36E9900599273 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		CDC1471915A36E9900599273 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		CDC1471A15A36E9900599273 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		CDC1471B15A36E9900599273 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		CDC1471C15A36E9900599273 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		CDC1471D15A36E9900599273 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		CDDE2FE21590777E008C8233 /* eve_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = eve_icon.icns; sourceTree = "<group>"; };
+		CDDED831159062C40003B331 /* AdditionalShortcuts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AdditionalShortcuts.plist; sourceTree = "<group>"; };
+		CDEB2624159B1C76002F77A1 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD6510D6158903AE0046036E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6511411589055A0046036E /* Carbon.framework in Frameworks */,
+				CD6510DE158903AE0046036E /* Cocoa.framework in Frameworks */,
+				CD65114C15890C730046036E /* ApplicationServices.framework in Frameworks */,
+				CDC146AF15A3694D00599273 /* Growl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD6510CE158903AE0046036E = {
+			isa = PBXGroup;
+			children = (
+				CD6510E3158903AE0046036E /* EVE */,
+				CD651100158903AF0046036E /* EVETests */,
+				CD6510DC158903AE0046036E /* Frameworks */,
+				CD6510DA158903AE0046036E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD6510DA158903AE0046036E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD6510D9158903AE0046036E /* EVE.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD6510DC158903AE0046036E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1470D15A36E9900599273 /* Lumberjack */,
+				CDC146AE15A3694D00599273 /* Growl.framework */,
+				CD651145158907650046036E /* ApplicationServices.framework */,
+				CD6511401589055A0046036E /* Carbon.framework */,
+				CD6510DD158903AE0046036E /* Cocoa.framework */,
+				CD6510FB158903AF0046036E /* SenTestingKit.framework */,
+				CD6510DF158903AE0046036E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD6510DF158903AE0046036E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6510E0158903AE0046036E /* AppKit.framework */,
+				CD6510E1158903AE0046036E /* CoreData.framework */,
+				CD6510E2158903AE0046036E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		CD6510E3158903AE0046036E /* EVE */ = {
+			isa = PBXGroup;
+			children = (
+				CD65115F15890ECA0046036E /* MenuBar.h */,
+				CD65116015890ECA0046036E /* MenuBar.m */,
+				CD65111A158904520046036E /* Constants.h */,
+				CD65111B158904520046036E /* Constants.m */,
+				CD6511111589043B0046036E /* AppDelegate.h */,
+				CD6511121589043B0046036E /* AppDelegate.m */,
+				CD651116158904490046036E /* ProcessPerformedAction.h */,
+				CD651117158904490046036E /* ProcessPerformedAction.m */,
+				CDDED831159062C40003B331 /* AdditionalShortcuts.plist */,
+				CD651188158A51060046036E /* Growl Registration Ticket.growlRegDict */,
+				CD651137158904E50046036E /* UIElementUtilities.h */,
+				CD651138158904E50046036E /* UIElementUtilities.m */,
+				CD6510E4158903AE0046036E /* Supporting Files */,
+			);
+			path = EVE;
+			sourceTree = "<group>";
+		};
+		CD6510E4158903AE0046036E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD6510E5158903AE0046036E /* EVE-Info.plist */,
+				CDDE2FE21590777E008C8233 /* eve_icon.icns */,
+				CD6510E6158903AE0046036E /* InfoPlist.strings */,
+				CD6510E9158903AE0046036E /* main.m */,
+				CDEB2624159B1C76002F77A1 /* Credits.html */,
+				CD6510EB158903AF0046036E /* EVE-Prefix.pch */,
+				CD6510EC158903AF0046036E /* Credits.rtf */,
+				CD65116A158910B20046036E /* MainMenu.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD651100158903AF0046036E /* EVETests */ = {
+			isa = PBXGroup;
+			children = (
+				CD651106158903AF0046036E /* EVETests.h */,
+				CD651107158903AF0046036E /* EVETests.m */,
+				CD651101158903AF0046036E /* Supporting Files */,
+			);
+			path = EVETests;
+			sourceTree = "<group>";
+		};
+		CD651101158903AF0046036E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD651102158903AF0046036E /* EVETests-Info.plist */,
+				CD651103158903AF0046036E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDC1470D15A36E9900599273 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1470E15A36E9900599273 /* DDAbstractDatabaseLogger.h */,
+				CDC1470F15A36E9900599273 /* DDAbstractDatabaseLogger.m */,
+				CDC1471015A36E9900599273 /* DDASLLogger.h */,
+				CDC1471115A36E9900599273 /* DDASLLogger.m */,
+				CDC1471215A36E9900599273 /* DDFileLogger.h */,
+				CDC1471315A36E9900599273 /* DDFileLogger.m */,
+				CDC1471415A36E9900599273 /* DDLog.h */,
+				CDC1471515A36E9900599273 /* DDLog.m */,
+				CDC1471615A36E9900599273 /* DDTTYLogger.h */,
+				CDC1471715A36E9900599273 /* DDTTYLogger.m */,
+				CDC1471815A36E9900599273 /* Extensions */,
+			);
+			name = Lumberjack;
+			path = EVE/Frameworks/Lumberjack;
+			sourceTree = "<group>";
+		};
+		CDC1471815A36E9900599273 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1471915A36E9900599273 /* ContextFilterLogFormatter.h */,
+				CDC1471A15A36E9900599273 /* ContextFilterLogFormatter.m */,
+				CDC1471B15A36E9900599273 /* DispatchQueueLogFormatter.h */,
+				CDC1471C15A36E9900599273 /* DispatchQueueLogFormatter.m */,
+				CDC1471D15A36E9900599273 /* README.txt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CD65115015890CE00046036E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC1471E15A36E9900599273 /* DDAbstractDatabaseLogger.h in Headers */,
+				CDC1472015A36E9900599273 /* DDASLLogger.h in Headers */,
+				CDC1472215A36E9900599273 /* DDFileLogger.h in Headers */,
+				CDC1472415A36E9900599273 /* DDLog.h in Headers */,
+				CDC1472615A36E9900599273 /* DDTTYLogger.h in Headers */,
+				CDC1472815A36E9900599273 /* ContextFilterLogFormatter.h in Headers */,
+				CDC1472A15A36E9900599273 /* DispatchQueueLogFormatter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CD6510D8158903AE0046036E /* EVE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD65110B158903AF0046036E /* Build configuration list for PBXNativeTarget "EVE" */;
+			buildPhases = (
+				CD6510D5158903AE0046036E /* Sources */,
+				CD6510D6158903AE0046036E /* Frameworks */,
+				CD6510D7158903AE0046036E /* Resources */,
+				CD65115015890CE00046036E /* Headers */,
+				CDDED833159064260003B331 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EVE;
+			productName = EVE;
+			productReference = CD6510D9158903AE0046036E /* EVE.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD6510D0158903AE0046036E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Sommer;
+			};
+			buildConfigurationList = CD6510D3158903AE0046036E /* Build configuration list for PBXProject "EVE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = CD6510CE158903AE0046036E;
+			productRefGroup = CD6510DA158903AE0046036E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD6510D8158903AE0046036E /* EVE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD6510D7158903AE0046036E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6510E8158903AE0046036E /* InfoPlist.strings in Resources */,
+				CD726E4A1598A7200019BAEB /* Growl Registration Ticket.growlRegDict in Resources */,
+				CD6510EE158903AF0046036E /* Credits.rtf in Resources */,
+				CD65116B158910B20046036E /* MainMenu.xib in Resources */,
+				CDDED832159062C40003B331 /* AdditionalShortcuts.plist in Resources */,
+				CDDE2FE31590777E008C8233 /* eve_icon.icns in Resources */,
+				CDEB2625159B1C76002F77A1 /* Credits.html in Resources */,
+				CDC1472C15A36E9900599273 /* README.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD6510D5158903AE0046036E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6510EA158903AE0046036E /* main.m in Sources */,
+				CD651170158915810046036E /* AppDelegate.m in Sources */,
+				CD65116215890ECA0046036E /* MenuBar.m in Sources */,
+				CD651174158915D00046036E /* UIElementUtilities.m in Sources */,
+				CD651176158916030046036E /* Constants.m in Sources */,
+				CD651175158915E30046036E /* ProcessPerformedAction.m in Sources */,
+				CDC1471F15A36E9900599273 /* DDAbstractDatabaseLogger.m in Sources */,
+				CDC1472115A36E9900599273 /* DDASLLogger.m in Sources */,
+				CDC1472315A36E9900599273 /* DDFileLogger.m in Sources */,
+				CDC1472515A36E9900599273 /* DDLog.m in Sources */,
+				CDC1472715A36E9900599273 /* DDTTYLogger.m in Sources */,
+				CDC1472915A36E9900599273 /* ContextFilterLogFormatter.m in Sources */,
+				CDC1472B15A36E9900599273 /* DispatchQueueLogFormatter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CD6510E6158903AE0046036E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6510E7158903AE0046036E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD6510EC158903AF0046036E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6510ED158903AF0046036E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		CD651103158903AF0046036E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD651104158903AF0046036E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD651109158903AF0046036E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CD65110A158903AF0046036E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CD65110C158903AF0046036E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Frameworks\"",
+					"\"$(SRCROOT)/EVE\"",
+					"\"$(SRCROOT)/EVE/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EVE/EVE-Prefix.pch";
+				INFOPLIST_FILE = "EVE/EVE-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CD65110D158903AF0046036E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Frameworks\"",
+					"\"$(SRCROOT)/EVE\"",
+					"\"$(SRCROOT)/EVE/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EVE/EVE-Prefix.pch";
+				INFOPLIST_FILE = "EVE/EVE-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD6510D3158903AE0046036E /* Build configuration list for PBXProject "EVE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD651109158903AF0046036E /* Debug */,
+				CD65110A158903AF0046036E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD65110B158903AF0046036E /* Build configuration list for PBXNativeTarget "EVE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD65110C158903AF0046036E /* Debug */,
+				CD65110D158903AF0046036E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD6510D0158903AE0046036E /* Project object */;
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>de</key>
+	<dict>
+		<key>Finder</key>
+		<dict>
+			<key>cover flow darstellung</key>
+			<string>Command 4</string>
+			<key>listendarstellung</key>
+			<string>Command 2</string>
+			<key>löschen</key>
+			<string>Command Delete</string>
+			<key>spaltendarstellung</key>
+			<string>Command 3</string>
+			<key>symboldarstellung</key>
+			<string>Command 1</string>
+			<key>verbinden</key>
+			<string>Command K</string>
+			<key>weiter</key>
+			<string>Command Ä</string>
+			<key>übersicht</key>
+			<string>Shift Option Leertaste</string>
+		</dict>
+		<key>Google Chrome</key>
+		<dict>
+			<key>adresse</key>
+			<string>Command L</string>
+			<key>neu laden</key>
+			<string>Command R</string>
+			<key>schließen</key>
+			<string>Command W</string>
+			<key>seitenquelltext anzeigen</key>
+			<string>Option Command U</string>
+			<key>speichern unter…</key>
+			<string>Command S</string>
+			<key>taste</key>
+			<string>Control Command F</string>
+		</dict>
+		<key>Mail</key>
+		<dict>
+			<key>absender hinzufügen</key>
+			<string>Shift Command Y</string>
+			<key>address</key>
+			<string>Option Command A</string>
+			<key>anhang</key>
+			<string>Shift Command A</string>
+			<key>drucken</key>
+			<string>Command P</string>
+			<key>empfangen</key>
+			<string>Shift Command N</string>
+			<key>gelesen</key>
+			<string>Shift Command U</string>
+			<key>ist werbung</key>
+			<string>Shift Command J</string>
+			<key>notiz</key>
+			<string>Control Command N</string>
+			<key>open</key>
+			<string>Command O</string>
+			<key>search</key>
+			<string>Option Command F</string>
+			<key>senden</key>
+			<string>Shift Command D</string>
+			<key>ungelesen</key>
+			<string>Shift Command U</string>
+		</dict>
+		<key>Safari</key>
+		<dict>
+			<key>1password</key>
+			<string>Command  \</string>
+			<key>downloads</key>
+			<string>Option Command L</string>
+			<key>drucken</key>
+			<string>Command P</string>
+			<key>element-informationen</key>
+			<string>Option Command I</string>
+			<key>google</key>
+			<string>Option Command F</string>
+			<key>leseliste</key>
+			<string>Shift Command L</string>
+			<key>lesezeichen</key>
+			<string>Option  Command  B</string>
+			<key>lesezeichen hinzufügen</key>
+			<string>Command D</string>
+			<key>lesezeichenleiste</key>
+			<string>Option Shift Command Ü</string>
+			<key>mail</key>
+			<string>Command I</string>
+			<key>neu laden</key>
+			<string>Command R</string>
+			<key>search text field</key>
+			<string>Command F</string>
+			<key>seite drucken …</key>
+			<string>Command P</string>
+			<key>seite hinzufügen</key>
+			<string>Shift Command D</string>
+			<key>seite sichern unter …</key>
+			<string>Shift Command S</string>
+			<key>show bookmarks</key>
+			<string>Option  Command  B</string>
+			<key>tab schließen</key>
+			<string>Command W</string>
+			<key>top sites</key>
+			<string>Option Command 1</string>
+			<key>verlauf</key>
+			<string>Option Command 2</string>
+			<key>webadresse</key>
+			<string>Command  L </string>
+			<key>webinformationen</key>
+			<string>Option Command I</string>
+		</dict>
+		<key>global</key>
+		<dict>
+			<key>taste</key>
+			<string>Option Command F</string>
+			<key>taste zum minimieren</key>
+			<string>Command  M</string>
+		</dict>
+	</dict>
+	<key>en</key>
+	<dict>
+		<key>Finder</key>
+		<dict>
+			<key>column view</key>
+			<string>Command 3</string>
+			<key>cover view</key>
+			<string>Command 4</string>
+			<key>icon view</key>
+			<string>Command 1</string>
+			<key>list view</key>
+			<string>Command 2</string>
+			<key>search</key>
+			<string>Command F</string>
+		</dict>
+		<key>Google Chrome</key>
+		<dict>
+			<key>adress</key>
+			<string>Command L</string>
+			<key>close</key>
+			<string>Command W</string>
+			<key>reload</key>
+			<string>Command R</string>
+			<key>save as…</key>
+			<string>Command S</string>
+			<key>view page source</key>
+			<string>Option Command U</string>
+		</dict>
+		<key>Mail</key>
+		<dict>
+			<key>add sender</key>
+			<string>Shift Command Y</string>
+			<key>address</key>
+			<string>Option Command A</string>
+			<key>attach</key>
+			<string>Shift Command A</string>
+			<key>connect</key>
+			<string>Command K</string>
+			<key>get mail</key>
+			<string>Shift Command N</string>
+			<key>junk</key>
+			<string>Shift Command J</string>
+			<key>note</key>
+			<string>Control Command N</string>
+			<key>open</key>
+			<string>Command O</string>
+			<key>print</key>
+			<string>Command P</string>
+			<key>read</key>
+			<string>Shift Command U</string>
+			<key>search</key>
+			<string>Option Command F</string>
+			<key>send</key>
+			<string>Shift Command D</string>
+			<key>show</key>
+			<string>Shift Option Command H</string>
+			<key>unread</key>
+			<string>Shift Command U</string>
+		</dict>
+		<key>Safari</key>
+		<dict>
+			<key>1password</key>
+			<string>Command  \</string>
+			<key>add bookmark</key>
+			<string>Command D</string>
+			<key>add page</key>
+			<string>Shift Command D</string>
+			<key>bookmarks</key>
+			<string>Option  Command  B</string>
+			<key>downloads</key>
+			<string>Option Command L</string>
+			<key>google</key>
+			<string>Option Command F</string>
+			<key>history</key>
+			<string>Option Command 2</string>
+			<key>inspect element</key>
+			<string>Option Command I</string>
+			<key>page address</key>
+			<string>Command  L </string>
+			<key>print</key>
+			<string>Command P</string>
+			<key>print page…</key>
+			<string>Command P</string>
+			<key>reading list</key>
+			<string>Shift Command L</string>
+			<key>reload</key>
+			<string>Command R</string>
+			<key>save page as…</key>
+			<string>Shift Command S</string>
+			<key>search text field</key>
+			<string>Command F</string>
+			<key>show bookmarks</key>
+			<string>Option  Command  B</string>
+			<key>top sites</key>
+			<string>Option Command 1</string>
+			<key>web inspector</key>
+			<string>Option Command I</string>
+		</dict>
+		<key>global</key>
+		<dict>
+			<key>full screen button</key>
+			<string>Option Command F</string>
+			<key>minimize button</key>
+			<string>Command  M</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
