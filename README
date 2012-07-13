@@ -11,7 +11,7 @@ Growl support
 If you find any errors, you're missing a feature or you just want to tell me something about EVE don't hesitate to get in contact. We're happy about any kind of feedback.
 
 Known bugs:
-Support for GUI elements doesn't work on external displays
+If the internal monitor is active, the support for GUI elements doesn't work on external displays 
 
 Twitter: @HotkeyEVE
 E-Mail:  hotkey.eve@googlemail.com
