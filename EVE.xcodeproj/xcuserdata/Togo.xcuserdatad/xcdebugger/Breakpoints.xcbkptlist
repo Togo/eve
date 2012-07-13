@@ -115,7 +115,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "227"
          endingLineNumber = "227"
-         landmarkName = "-registerAppFrontSwitchedHandler"
+         landmarkName = "-registerAppLaunchedHandler"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -609,7 +609,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "235"
          endingLineNumber = "235"
-         landmarkName = "-registerAppLaunchedHandler"
+         landmarkName = "-appFrontSwitched"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -622,8 +622,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "234"
          endingLineNumber = "234"
-         landmarkName = "-registerAppLaunchedHandler"
-         landmarkType = "5">
+         landmarkName = "@implementation AppDelegate"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
