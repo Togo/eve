@@ -8,6 +8,12 @@ Displaying shortcuts for Chrome GUI elements (de, en), eg. the back button
 Displaying shortcuts for Finder GUI elements (de, en), 
 Growl support
 
+Coming Up(Collaborators welcome):
+1. Learned Button
+2. UnitTests
+3. New Core to support almost all apps
+4. Shortcut Search Engine
+
 If you find any errors, you're missing a feature or you just want to tell me something about EVE don't hesitate to get in contact. We're happy about any kind of feedback.
 
 Known bugs:
@@ -16,6 +22,8 @@ If the internal monitor is active, the support for GUI elements doesn't work on 
 Twitter: @HotkeyEVE
 E-Mail:  hotkey.eve@googlemail.com
 Google+: Hotkey EVE
+Blog:    http://hotkeyeve.blogspot.de/
+Flattr:  https://flattr.com/thing/757902/HotkeyEVE-on-Flattr
 
 **** LICENSE ****
 
