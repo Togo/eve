@@ -116,7 +116,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     if ( ([cmdModifiers intValue] & kMenuNoCommandModifier) == 0 )
     {
-        DDLogInfo(@"No Command Modifier");
+        DDLogInfo(@"Command Modifier");
         theShortcut = [theShortcut stringByAppendingString:@"Command "];
     }
     

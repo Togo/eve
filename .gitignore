@@ -4,10 +4,10 @@
 
 build/
 Dropbox/
-
+EVE.xcodeproj/xcuserdata/
 
 *.pbxuser
 *.perspective
 *.perspectivev3
 
-xcuserdata
+xcuserdata/
