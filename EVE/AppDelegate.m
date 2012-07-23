@@ -26,6 +26,7 @@
 #import <Carbon/Carbon.h>
 #import "AppDelegate.h"
 #import "UIElementUtilities.h"
+#import "NSFileManager+DirectoryLocations.h"
 
 #import "ProcessPerformedAction.h"
 
@@ -35,6 +36,7 @@ NSString             *preferredLang;
 NSInteger            appPause;
 NSPopover            *popover;
 NSString             *lastSendedShortcut;
+NSMutableDictionary  *applicationData;
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -85,6 +87,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     shortcutDictionary = [[NSMutableDictionary alloc] init]; 
     
+    [self loadApplicationData];
+    
     // Language
     NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
     NSArray* languages = [defs objectForKey:@"AppleLanguages"];
@@ -112,23 +116,33 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 //        [Growl initializeGrowl];
         [GrowlApplicationBridge setGrowlDelegate:self];
             DDLogInfo(@"Load Growl Framework");
-       
-    
-    
-
-    
 }
 
 
 -(void)growlNotificationWasClicked:(id)clickContext{ // a Growl delegate method, called when a notification is clicked. Check the value of the clickContext argument to determine what to do
-    if([clickContext isEqualToString:@"launchNotifyClick"]){
-        NSLog(@"ClickContext successfully received!");
+    if(clickContext){
+        DDLogInfo(@"ClickContext successfully received!");
+        
+        if (!learnedWindowController) {
+            learnedWindowController = [[LearnedWindowController alloc] initWithWindowNibName:@"LearnedWindow"];
+       
+        }
+        
+        [learnedWindowController setClickContextArray: clickContext];
+        
+        NSWindow *learnedWindow = [learnedWindowController window];
+        
+        [NSApp runModalForWindow: learnedWindow];
+        
+        [NSApp endSheet: learnedWindow];
+        
+        [learnedWindow orderOut: self];
+    }
+    else
+    {
+        DDLogError(@"Something went wrong in the click context: %@", clickContext);
     }
 }
-
-- (BOOL) hasNetworkClientEntitlement {
-    return TRUE;
-    }
 
 
 #pragma mark -
@@ -223,6 +237,31 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
 }
 
+- (void) loadApplicationData {
+    applicationData = [[NSMutableDictionary alloc] init];
+    NSString     *finalPath =  [[NSBundle mainBundle] pathForResource:@"AdditionalShortcuts"  ofType:@"plist" inDirectory:@""];
+    NSDictionary *allAdditionalShortcuts = [[NSDictionary alloc] initWithContentsOfFile:finalPath];
+    
+    finalPath = [[NSFileManager defaultManager] applicationSupportDirectory];
+    finalPath = [finalPath stringByAppendingPathComponent:@"learnedShortcuts.plist"];
+    NSMutableDictionary *learnedShortcuts = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
+    
+    if (!learnedShortcuts) { // If you can't find the dictionary create a new one!
+        DDLogInfo(@"Can't find learnedShortcut Dictionary. I create a new dictionary");
+        learnedShortcuts = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *systemWide      = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *applicationWide = [[NSMutableDictionary alloc] init];
+        
+        [learnedShortcuts setValue:systemWide forKey:@"systemWide"];
+        [learnedShortcuts setValue:applicationWide forKey:@"applicationsWide"];
+
+        [learnedShortcuts writeToFile:finalPath atomically: YES];
+    }
+    
+    [applicationData setValue:allAdditionalShortcuts forKey:@"applicationShortcuts"];
+    [applicationData setValue:learnedShortcuts forKey:@"learnedShortcuts"];
+}
+
 - (void) registerAppFrontSwitchedHandler {
     EventTypeSpec spec = { kEventClassApplication,  kEventAppFrontSwitched };
     OSStatus err = InstallApplicationEventHandler(NewEventHandlerUPP(AppFrontSwitchedHandler), 1, &spec, (__bridge void*)self, NULL);
@@ -242,39 +281,28 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void) appFrontSwitched {
       if(!appPause) {
-        // Release the Memory
-        [[shortcutDictionary valueForKey:@"menuBarShortcuts"] removeAllObjects];
-        [[shortcutDictionary valueForKey:@"additionalShortcuts"] removeAllObjects];
-       
-          
-          NSString     *activeApplicationName = [NSString stringWithFormat:[UIElementUtilities readApplicationName]];
+        NSString     *activeApplicationName = [NSString stringWithFormat:[UIElementUtilities readApplicationName]];
         DDLogInfo(@"Active Application: %@", activeApplicationName); 
     
-          // Clear all Object to reload data
-        [shortcutDictionary removeAllObjects];
-        NSMutableDictionary *applicationShortcuts = [[NSMutableDictionary alloc] init];
+      
+        NSMutableDictionary *applicationShortcuts = [applicationData valueForKey:@"applicationShortcuts"];
         
         AXUIElementRef appRef = AXUIElementCreateApplication( [[[[NSWorkspace sharedWorkspace] activeApplication] valueForKey:@"NSApplicationProcessIdentifier"] intValue] );
         
           
         NSDictionary *menuBarShortcuts   = [NSDictionary dictionaryWithDictionary:[UIElementUtilities createApplicationMenuBarShortcutDictionary:appRef]];
-        NSString     *finalPath =  [[NSBundle mainBundle] pathForResource:@"AdditionalShortcuts"  ofType:@"plist" inDirectory:@""];
-        NSDictionary *allAdditionalShortcuts = [[NSDictionary alloc] initWithContentsOfFile:finalPath];
+          NSDictionary *appAddinitionalShortcuts = [NSDictionary dictionaryWithDictionary:[[applicationShortcuts valueForKey:preferredLang]  valueForKey:activeApplicationName]];
+          NSDictionary *globalAddintionalShortcuts = [NSDictionary dictionaryWithDictionary:[[applicationShortcuts valueForKey:preferredLang]  valueForKey:@"global"]];
+          [applicationShortcuts setValue:appAddinitionalShortcuts forKey:@"additionalShortcuts"];
+          [applicationShortcuts setValue:globalAddintionalShortcuts forKey:@"global"];
         
-        NSDictionary *appAddinitionalShortcuts = [NSDictionary dictionaryWithDictionary:[[allAdditionalShortcuts valueForKey:preferredLang]  valueForKey:activeApplicationName]];
-        NSDictionary *globalAddintionalShortcuts = [NSDictionary dictionaryWithDictionary:[[allAdditionalShortcuts valueForKey:preferredLang]  valueForKey:@"global"]];
-        
-          
         [applicationShortcuts setValue:menuBarShortcuts forKey:@"menuBarShortcuts"];
-        [applicationShortcuts setValue:appAddinitionalShortcuts forKey:@"additionalShortcuts"];
-        [applicationShortcuts setValue:globalAddintionalShortcuts forKey:@"global"];
+
         [shortcutDictionary setValue:applicationShortcuts forKey:activeApplicationName];
         
           
         DDLogInfo(@"ShortcutDictionary for %@ created", activeApplicationName); 
         DDLogInfo(@"I create a menuBarShortcutDictionary   with %lu Items", menuBarShortcuts.count);
-        DDLogInfo(@"I read the app additional   Shortcuts  with %lu Items", appAddinitionalShortcuts.count);
-        DDLogInfo(@"I read the global additional Shortcuts with %lu Items", globalAddintionalShortcuts.count);
         CFRelease(appRef);
     }
 }
@@ -289,6 +317,5 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
    [(__bridge id)inUserData appFrontSwitched];
     return 0;
 }
-
 
 @end

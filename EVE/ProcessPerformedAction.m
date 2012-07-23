@@ -80,7 +80,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     if (theShortcutName.length > 0) {
         DDLogInfo(@"Matched Shortcut: %@", theShortcutName);
-        [self showGrowlMessage:theShortcutName];
+        [self showGrowlMessage:actionTitle :theShortcutName :applicationName];
     }
   }
     else 
@@ -165,13 +165,13 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return theShortcut;
 }
 
-+ (void)showGrowlMessage:(NSString*) theShortcut {
++ (void)showGrowlMessage:(NSString*)clickedActionTitle :(NSString*) theShortcut :(NSString*) clickedApplicationName {
     if (![theShortcut isEqualToString:lastSendedShortcut]) {
         
-        [GrowlApplicationBridge notifyWithTitle:@"" description:theShortcut notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:@"launchNotifyClick"];
+        
+        [GrowlApplicationBridge notifyWithTitle:@"" description:theShortcut notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:[NSArray arrayWithObjects:clickedActionTitle, theShortcut, clickedApplicationName, nil]];
         
         lastSendedShortcut = theShortcut;
-        
     }
     else {
         DDLogInfo(@"This Shortcut has already been send. Don't bother me!!!");

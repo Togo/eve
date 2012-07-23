@@ -29,10 +29,15 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
+#import "LearnedWindowController.h"
+
 
 @class OptionsWindowController;
 
 @interface AppDelegate : NSObject <GrowlApplicationBridgeDelegate>{
+    
+
+    LearnedWindowController *learnedWindowController;    
     
     IBOutlet NSMenu  *theMenu;
     NSStatusItem *theItem;
@@ -47,13 +52,13 @@
     
 }   
 
-extern NSMutableDictionary            *shortcutDictionary;
+extern NSMutableDictionary     *shortcutDictionary;
 extern NSImage                 *eve_icon;
 extern NSString                *preferredLang;
 extern NSPopover               *popover;
 extern NSInteger                appPause;
 extern NSString                *lastSendedShortcut;
-
+extern NSMutableDictionary     *applicationData;
 
 - (void)setCurrentUIElement:(AXUIElementRef)uiElement;
 - (AXUIElementRef)currentUIElement;
@@ -68,6 +73,6 @@ extern NSString                *lastSendedShortcut;
 
 - (void) appFrontSwitched;
 
-- (BOOL) hasNetworkClientEntitlement;
+- (void) loadApplicationData;
 
 @end

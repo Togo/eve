@@ -35,6 +35,6 @@
 
 + (NSString*) composeShortcut: (AXUIElementRef) elementRef;
 
-+ (void)showGrowlMessage:(NSString*) theShortcut;
++ (void)showGrowlMessage:(NSString*)clickedActionTitle :(NSString*) theShortcut :(NSString*) clickedApplicationName;
 
 @end
