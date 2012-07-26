@@ -7,8 +7,9 @@
 //
 
 #import "LearnedWindowController.h"
-#import "AppDelegate.h"
+#import "DDLog.h"
 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation LearnedWindowController
 
@@ -31,23 +32,31 @@
 
 - (IBAction) closeButton:(id) sender {
     [NSApp stopModal];
+    DDLogInfo(@"Close the LearnedShortcut Window without doing anything!");
 }
 
-
 - (IBAction) globalButton:(id) sender {
-    NSLog(@"%@", clickContextArray);
-    NSMutableDictionary *globalLearnedShortcuts = [[applicationData valueForKey:@"learnedShortcuts"] valueForKey:@"systemWide"];
+
+    /* Get the Array with the shortcut from Growl */
+    NSArray *clickContext = [sharedAppDelegate getClickContextArray];
+    DDLogInfo(@"Got this Value to save: %@", clickContext);
     
-    [globalLearnedShortcuts setValue:[clickContextArray objectAtIndex:1] forKey:[clickContextArray objectAtIndex:0]];
+    ApplicationData *applicationData = [sharedAppDelegate getApplicationData];
+    NSMutableDictionary *applicationDataDictionary = [[sharedAppDelegate getApplicationData] getApplicationDataDictionary];
+    NSMutableDictionary *learnedShortcuts = [applicationDataDictionary valueForKey:@"learnedShortcuts"];
+
+    NSMutableDictionary *globalLearnedShortcuts = [learnedShortcuts valueForKey:@"systemWide"];
     
-    // TODO Save the modified dictionary
+    /* add the Shortcut to the list */
+    [globalLearnedShortcuts setValue:@"FALSE" forKey:[clickContext objectAtIndex:1]];
+    
+    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcuts];
     
     [NSApp stopModal];
 }
 
-
-- (void) setClickContextArray:(NSArray*) id {
-    clickContextArray = id;
+- (void) setAppDelegate:(AppDelegate*) appDelegate {
+    sharedAppDelegate = appDelegate;
 }
 
 @end

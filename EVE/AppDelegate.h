@@ -28,17 +28,18 @@
 #import "DDFileLogger.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
+#import "ApplicationData.h"
 
 #import "LearnedWindowController.h"
 
 
 @class OptionsWindowController;
+@class LearnedWindowController;
 
-@interface AppDelegate : NSObject <GrowlApplicationBridgeDelegate>{
+@interface AppDelegate : NSObject <GrowlApplicationBridgeDelegate> {
     
-
     LearnedWindowController *learnedWindowController;    
-    
+
     IBOutlet NSMenu  *theMenu;
     NSStatusItem *theItem;
     
@@ -50,7 +51,11 @@
     BOOL                        _currentlyInteracting;
     BOOL                        _highlightLockedUIElement;
     
-}   
+    ApplicationData             *applicationData;
+    NSMutableDictionary         *applicationDataDictionary;
+    
+    NSArray                     *clickContext;
+}
 
 extern NSMutableDictionary     *shortcutDictionary;
 extern NSImage                 *eve_icon;
@@ -58,7 +63,7 @@ extern NSString                *preferredLang;
 extern NSPopover               *popover;
 extern NSInteger                appPause;
 extern NSString                *lastSendedShortcut;
-extern NSMutableDictionary     *applicationData;
+
 
 - (void)setCurrentUIElement:(AXUIElementRef)uiElement;
 - (AXUIElementRef)currentUIElement;
@@ -73,6 +78,10 @@ extern NSMutableDictionary     *applicationData;
 
 - (void) appFrontSwitched;
 
-- (void) loadApplicationData;
+- (void) setClickContextArray:(NSArray*) id;
+
+- (NSArray*) getClickContextArray;
+
+- (ApplicationData*) getApplicationData;
 
 @end

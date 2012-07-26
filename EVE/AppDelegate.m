@@ -27,6 +27,7 @@
 #import "AppDelegate.h"
 #import "UIElementUtilities.h"
 #import "NSFileManager+DirectoryLocations.h"
+#import "ApplicationData.h"
 
 #import "ProcessPerformedAction.h"
 
@@ -87,7 +88,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     shortcutDictionary = [[NSMutableDictionary alloc] init]; 
     
-    [self loadApplicationData];
+    applicationData =  [ApplicationData loadApplicationData];
+    applicationDataDictionary = [applicationData getApplicationDataDictionary];
     
     // Language
     NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
@@ -119,16 +121,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 
--(void)growlNotificationWasClicked:(id)clickContext{ // a Growl delegate method, called when a notification is clicked. Check the value of the clickContext argument to determine what to do
-    if(clickContext){
+-(void)growlNotificationWasClicked:(id) clickedContext { // a Growl delegate method, called when a notification is clicked. Check the value of the clickContext argument to determine what to do
+    if(clickedContext){
         DDLogInfo(@"ClickContext successfully received!");
         
         if (!learnedWindowController) {
             learnedWindowController = [[LearnedWindowController alloc] initWithWindowNibName:@"LearnedWindow"];
-       
+            [learnedWindowController setAppDelegate: self];
         }
         
-        [learnedWindowController setClickContextArray: clickContext];
+        [self setClickContextArray: clickedContext];
         
         NSWindow *learnedWindow = [learnedWindowController window];
         
@@ -140,7 +142,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
     else
     {
-        DDLogError(@"Something went wrong in the click context: %@", clickContext);
+        DDLogError(@"Something went wrong in the click context: %@", clickedContext);
     }
 }
 
@@ -237,30 +239,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
 }
 
-- (void) loadApplicationData {
-    applicationData = [[NSMutableDictionary alloc] init];
-    NSString     *finalPath =  [[NSBundle mainBundle] pathForResource:@"AdditionalShortcuts"  ofType:@"plist" inDirectory:@""];
-    NSDictionary *allAdditionalShortcuts = [[NSDictionary alloc] initWithContentsOfFile:finalPath];
-    
-    finalPath = [[NSFileManager defaultManager] applicationSupportDirectory];
-    finalPath = [finalPath stringByAppendingPathComponent:@"learnedShortcuts.plist"];
-    NSMutableDictionary *learnedShortcuts = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
-    
-    if (!learnedShortcuts) { // If you can't find the dictionary create a new one!
-        DDLogInfo(@"Can't find learnedShortcut Dictionary. I create a new dictionary");
-        learnedShortcuts = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *systemWide      = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *applicationWide = [[NSMutableDictionary alloc] init];
-        
-        [learnedShortcuts setValue:systemWide forKey:@"systemWide"];
-        [learnedShortcuts setValue:applicationWide forKey:@"applicationsWide"];
-
-        [learnedShortcuts writeToFile:finalPath atomically: YES];
-    }
-    
-    [applicationData setValue:allAdditionalShortcuts forKey:@"applicationShortcuts"];
-    [applicationData setValue:learnedShortcuts forKey:@"learnedShortcuts"];
-}
 
 - (void) registerAppFrontSwitchedHandler {
     EventTypeSpec spec = { kEventClassApplication,  kEventAppFrontSwitched };
@@ -269,7 +247,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (err)
         DDLogError(@"Could not install event handler");
 }
-
 
 - (void) registerAppLaunchedHandler {
     EventTypeSpec spec = { kEventClassApplication,  kEventAppLaunched };
@@ -285,7 +262,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         DDLogInfo(@"Active Application: %@", activeApplicationName); 
     
       
-        NSMutableDictionary *applicationShortcuts = [applicationData valueForKey:@"applicationShortcuts"];
+        NSMutableDictionary *applicationShortcuts = [applicationDataDictionary valueForKey:@"applicationShortcuts"];
         
         AXUIElementRef appRef = AXUIElementCreateApplication( [[[[NSWorkspace sharedWorkspace] activeApplication] valueForKey:@"NSApplicationProcessIdentifier"] intValue] );
         
@@ -317,5 +294,22 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
    [(__bridge id)inUserData appFrontSwitched];
     return 0;
 }
+
+
+
+- (void) setClickContextArray:(NSArray*) id {
+    clickContext = id;
+}
+
+- (NSArray*) getClickContextArray {
+    return clickContext;
+}
+
+- (ApplicationData*) getApplicationData {
+    return applicationData;
+}
+
+
+
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD64697915C084C700AEECDE /* ApplicationData.h in Headers */ = {isa = PBXBuildFile; fileRef = CD64697715C084C700AEECDE /* ApplicationData.h */; };
+		CD64697A15C084C700AEECDE /* ApplicationData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD64697815C084C700AEECDE /* ApplicationData.m */; };
 		CD6510DE158903AE0046036E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
 		CD6510E8158903AE0046036E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6510E6158903AE0046036E /* InfoPlist.strings */; };
 		CD6510EA158903AE0046036E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6510E9158903AE0046036E /* main.m */; };
@@ -61,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD64697715C084C700AEECDE /* ApplicationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationData.h; sourceTree = "<group>"; };
+		CD64697815C084C700AEECDE /* ApplicationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationData.m; sourceTree = "<group>"; };
 		CD6510D9158903AE0046036E /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6510DD158903AE0046036E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD6510E0158903AE0046036E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -192,6 +196,8 @@
 				CD651138158904E50046036E /* UIElementUtilities.m */,
 				CDC9154715BC1F77003CEFAF /* LearnedWindowController.h */,
 				CDC9154815BC1F77003CEFAF /* LearnedWindowController.m */,
+				CD64697715C084C700AEECDE /* ApplicationData.h */,
+				CD64697815C084C700AEECDE /* ApplicationData.m */,
 				CD6510E4158903AE0046036E /* Supporting Files */,
 			);
 			path = EVE;
@@ -279,6 +285,7 @@
 				CDC1472A15A36E9900599273 /* DispatchQueueLogFormatter.h in Headers */,
 				CDC9154915BC1F77003CEFAF /* LearnedWindowController.h in Headers */,
 				CDE60B2A15BC52B6000EB824 /* NSFileManager+DirectoryLocations.h in Headers */,
+				CD64697915C084C700AEECDE /* ApplicationData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +377,7 @@
 				CDC1472B15A36E9900599273 /* DispatchQueueLogFormatter.m in Sources */,
 				CDC9154A15BC1F77003CEFAF /* LearnedWindowController.m in Sources */,
 				CDE60B2B15BC52B6000EB824 /* NSFileManager+DirectoryLocations.m in Sources */,
+				CD64697A15C084C700AEECDE /* ApplicationData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

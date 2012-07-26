@@ -6,10 +6,14 @@
 //  Copyright (c) 2012 Sommer. All rights reserved.
 //
 
+
 #import <Cocoa/Cocoa.h>
+#import "AppDelegate.h"
+
+@class AppDelegate;
 
 @interface LearnedWindowController : NSWindowController {
-        NSArray *clickContextArray;
+        AppDelegate     *sharedAppDelegate;
 }
 
 
@@ -17,6 +21,6 @@
 
 -(IBAction) globalButton:(id) sender;
 
+- (void) setAppDelegate:(AppDelegate*) appDelegate;
 
-- (void) setClickContextArray:(NSArray*) id ;
 @end
