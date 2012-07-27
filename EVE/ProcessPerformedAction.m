@@ -35,7 +35,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 @implementation ProcessPerformedAction
 
 
-+ (void)treatPerformedAction: (NSEvent*)mouseEvent:(AXUIElementRef)currentUIElement {
++ (void)treatPerformedAction :(NSEvent*) mouseEvent :(AXUIElementRef) currentUIElement :(NSDictionary*) learnedShortcuts {
     NSString *actionTitle;
     NSString *applicationName = [NSString stringWithFormat:[UIElementUtilities readApplicationName]];
     NSString *theShortcutName = nil;
@@ -46,11 +46,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     DDLogInfo(@"ActionName: %@", actionTitle);
     
+    // If i read a action title go on
     if (actionTitle.length > 0) {
-       
-    NSDictionary *additionalApplicationShortcuts = [[shortcutDictionary valueForKey:applicationName] valueForKey:@"additionalShortcuts"];
+    
+
+    NSDictionary *additionalApplicationShortcuts = [[shortcutDictionary valueForKey:applicationName] valueForKey:additionalShortcuts];
     NSDictionary *globalAdditionalShortcuts = [[shortcutDictionary valueForKey:applicationName] valueForKey:@"global"];
     
+    /* First search in the application Shortcuts for this actionTitle. If nothing found, check the global Dictionary for this action. If nothing found, search in the MenuBar Dictionary */
     if ([additionalApplicationShortcuts valueForKey:actionTitle]){
         theShortcutName = [additionalApplicationShortcuts valueForKey:actionTitle];
         DDLogInfo(@"I found a Shortcut in the AdditionialDictionary: %@", actionTitle);
@@ -71,14 +74,10 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         }
         else {
             DDLogError(@"No Shortcut in MenuBarDictionaryFound or additionalShortcuDictionary found: %@", actionTitle);
-    //       DDLogInfo(@"menuBar Shortcuts %@", applicationShortcuts);
-    //       DDLogInfo(@"additional Application Shortcuts %@", additionalApplicationShortcuts);
-    //       DDLogInfo(@"global Shortcuts %@", globalAdditionalShortcuts);
-    //       DDLogInfo(@"ActionName: %@", actionTitle);
         }
     }
     
-    if (theShortcutName.length > 0) {
+        if (theShortcutName.length > 0 && [self isAlreadyLearned:theShortcutName :applicationName :learnedShortcuts]) {
         DDLogInfo(@"Matched Shortcut: %@", theShortcutName);
         [self showGrowlMessage:actionTitle :theShortcutName :applicationName];
     }
@@ -179,5 +178,26 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
 }
 
+
++ (BOOL) isAlreadyLearned:(NSString*) theShortcutName :(NSString*) applicationName  :(NSDictionary*) learnedShortcuts {
+    NSDictionary *globalLearnedShortcutDictionary = [learnedShortcuts valueForKey:globalLearnedShortcut];
+    BOOL globalLearned = [((NSString*)[globalLearnedShortcutDictionary valueForKey:theShortcutName]) boolValue];
+    
+    NSDictionary *appliciationLearnedShortcutDictionary = [[learnedShortcuts valueForKey:applicationLearnedShortcut] valueForKey:applicationName];
+    BOOL applicationLearned = [((NSString*)[appliciationLearnedShortcutDictionary valueForKey:theShortcutName]) boolValue];
+    
+    
+    
+    if(globalLearned || applicationLearned)
+    {
+        
+        DDLogInfo(@"GlobalLearned: %d", globalLearned);
+        DDLogInfo(@"ApplicationLearned: %d", applicationLearned);
+        DDLogInfo(@"You marked this Shortcut as learned! If thats not right, check the learnedShortcutDictionary in the ApplicationSupport/EVE folder! Delete the entry or set it to false");
+        return false;
+    }
+    
+    return true;  
+}
 @end
 

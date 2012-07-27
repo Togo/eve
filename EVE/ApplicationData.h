@@ -13,7 +13,7 @@
     NSMutableDictionary *applicationDataDictionary;
 }
 
-+ (NSMutableDictionary*) loadApplicationData;
++ (ApplicationData*) loadApplicationData;
 
 + (void) saveLearnedShortcutDictionary :(ApplicationData*) applicationData :(NSMutableDictionary*) applicationDataDictionary;
 

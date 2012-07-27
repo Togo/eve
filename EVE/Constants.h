@@ -30,4 +30,12 @@ extern NSString *const Finder;
 
 extern NSString *const eveEmailAddresse;
 
+extern NSString *const globalLearnedShortcut;
+
+extern NSString *const applicationLearnedShortcut;
+
+extern NSString *const learnedShortcuts;
+
+extern NSString *const additionalShortcuts;
+
 @end

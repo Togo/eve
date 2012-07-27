@@ -21,6 +21,8 @@
 
 -(IBAction) globalButton:(id) sender;
 
+-(IBAction) applicationButton:(id) sender;
+
 - (void) setAppDelegate:(AppDelegate*) appDelegate;
 
 @end

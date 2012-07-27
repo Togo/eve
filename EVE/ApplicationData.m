@@ -9,6 +9,7 @@
 #import "ApplicationData.h"
 #import "DDLog.h"
 #import "NSFileManager+DirectoryLocations.h"
+#import "Constants.h"
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -23,30 +24,29 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     finalPath = [[NSFileManager defaultManager] applicationSupportDirectory];
     finalPath = [finalPath stringByAppendingPathComponent:@"learnedShortcuts.plist"];
-    NSMutableDictionary *learnedShortcuts = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
+    NSMutableDictionary *learnedShortcutsDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
     [applicationData setLearnedShortcutDictionaryPath: finalPath];
-    finalPath = NULL;
     
-    if (!learnedShortcuts) { // If you can't find the dictionary create a new one!
-        DDLogInfo(@"Can't find learnedShortcut Dictionary. I create a new dictionary");
-        learnedShortcuts = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *systemWide      = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *applicationWide = [[NSMutableDictionary alloc] init];
+    if (!learnedShortcutsDictionary) { // If you can't find the dictionary create a new one!
+        DDLogInfo(@"Can't find learnedShortcut Dictionary. I create a new one");
+        learnedShortcutsDictionary = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *globalLearnedShortcutDictionary      = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *applicationLearnedShortcutDictionary = [[NSMutableDictionary alloc] init];
         
-        [learnedShortcuts setValue:systemWide forKey:@"systemWide"];
-        [learnedShortcuts setValue:applicationWide forKey:@"applicationsWide"];
+        [learnedShortcutsDictionary setValue:globalLearnedShortcutDictionary forKey:globalLearnedShortcut];
+        [learnedShortcutsDictionary setValue:applicationLearnedShortcutDictionary forKey:applicationLearnedShortcut];
         
-        [learnedShortcuts writeToFile:finalPath atomically: YES];
+        [learnedShortcutsDictionary writeToFile:finalPath atomically: YES];
     }
     
     [applicationDataDictionary setValue:allAdditionalShortcuts forKey:@"applicationShortcuts"];
-    [applicationDataDictionary setValue:learnedShortcuts forKey:@"learnedShortcuts"];
+    [applicationDataDictionary setValue:learnedShortcutsDictionary forKey:learnedShortcuts];
     [applicationData setApplicationDataDictionary: applicationDataDictionary];
     
     return applicationData;
 }
 
-+ (void) saveLearnedShortcutDictionary :(ApplicationData*) applicationData :(NSMutableDictionary*) applicationDataDictionary{
++ (void) saveLearnedShortcutDictionary :(ApplicationData*) applicationData :(NSMutableDictionary*) applicationDataDictionary {
     NSString *path =    [applicationData getLearnedShortcutDictionaryPath];
     if(path)
     {

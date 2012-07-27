@@ -8,6 +8,7 @@
 
 #import "LearnedWindowController.h"
 #import "DDLog.h"
+#import "Constants.h"
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -39,21 +40,51 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     /* Get the Array with the shortcut from Growl */
     NSArray *clickContext = [sharedAppDelegate getClickContextArray];
-    DDLogInfo(@"Got this Value to save: %@", clickContext);
+    DDLogInfo(@"Got this Value to save in learnedShortcut(systemwide): %@", clickContext);
     
     ApplicationData *applicationData = [sharedAppDelegate getApplicationData];
     NSMutableDictionary *applicationDataDictionary = [[sharedAppDelegate getApplicationData] getApplicationDataDictionary];
-    NSMutableDictionary *learnedShortcuts = [applicationDataDictionary valueForKey:@"learnedShortcuts"];
+    NSMutableDictionary *learnedShortcutDictionary = [applicationDataDictionary valueForKey:learnedShortcuts];
 
-    NSMutableDictionary *globalLearnedShortcuts = [learnedShortcuts valueForKey:@"systemWide"];
+    NSMutableDictionary *globalLearnedShortcuts = [learnedShortcutDictionary valueForKey:globalLearnedShortcut];
     
     /* add the Shortcut to the list */
-    [globalLearnedShortcuts setValue:@"FALSE" forKey:[clickContext objectAtIndex:1]];
+    [globalLearnedShortcuts setValue:@"TRUE" forKey:[clickContext objectAtIndex:1]];
     
-    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcuts];
+    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
     
     [NSApp stopModal];
 }
+
+- (IBAction) applicationButton:(id) sender {
+    
+    /* Get the Array with the shortcut from Growl */
+    NSArray *clickContext = [sharedAppDelegate getClickContextArray];
+    DDLogInfo(@"Got this Value to save in learnedShortcut(application): %@", clickContext);
+    
+    ApplicationData *applicationData = [sharedAppDelegate getApplicationData];
+    NSMutableDictionary *applicationDataDictionary = [[sharedAppDelegate getApplicationData] getApplicationDataDictionary];
+    NSMutableDictionary *learnedShortcutDictionary = [applicationDataDictionary valueForKey:learnedShortcuts];
+    
+    NSMutableDictionary *applicationLearnedShortcutDictionary = [learnedShortcutDictionary valueForKey:applicationLearnedShortcut];
+    
+    // If the Application not in the Dictionary add this, else load the Dictionary for this Application
+    if (![applicationLearnedShortcutDictionary valueForKey:[clickContext objectAtIndex:2]]) {
+        NSMutableDictionary *newApplicationDictionary = [[NSMutableDictionary alloc] init];
+        [applicationLearnedShortcutDictionary setValue:newApplicationDictionary forKey:[clickContext objectAtIndex:2]];
+    }
+
+    
+    NSMutableDictionary *theLearnedApplicationDictonary = [applicationLearnedShortcutDictionary valueForKey:[clickContext objectAtIndex:2]];
+    /* add the Shortcut to the list */
+    [theLearnedApplicationDictonary setValue:@"TRUE" forKey:[clickContext objectAtIndex:1]];
+    
+    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
+    
+    [NSApp stopModal];
+}
+
+
 
 - (void) setAppDelegate:(AppDelegate*) appDelegate {
     sharedAppDelegate = appDelegate;

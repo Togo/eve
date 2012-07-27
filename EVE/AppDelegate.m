@@ -28,8 +28,8 @@
 #import "UIElementUtilities.h"
 #import "NSFileManager+DirectoryLocations.h"
 #import "ApplicationData.h"
-
 #import "ProcessPerformedAction.h"
+#import "Constants.h"
 
 NSMutableDictionary  *shortcutDictionary;
 NSImage              *eve_icon;
@@ -88,7 +88,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     shortcutDictionary = [[NSMutableDictionary alloc] init]; 
     
-    applicationData =  [ApplicationData loadApplicationData];
+    applicationData = [ApplicationData loadApplicationData];
     applicationDataDictionary = [applicationData getApplicationDataDictionary];
     
     // Language
@@ -227,7 +227,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                                        || [role isEqualToString:(NSString*)kAXMenuButtonRole] 
                                                                        || [role isEqualToString:(NSString*)kAXMenuItemRole]) 
                                                                    {
-                                                                   [ProcessPerformedAction treatPerformedAction:incomingEvent :_currentUIElement];
+                                                                       [ProcessPerformedAction treatPerformedAction:incomingEvent :_currentUIElement :    [applicationDataDictionary valueForKey:learnedShortcuts]];
                                                                    }
                                                                    else 
                                                                    {

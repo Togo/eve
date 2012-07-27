@@ -30,11 +30,12 @@
 
 }
 
-// Methods*
-+ (void)treatPerformedAction: (NSEvent*)mouseEvent:(AXUIElementRef)currentUIElement;
++ (void)treatPerformedAction :(NSEvent*) mouseEvent :(AXUIElementRef) currentUIElement :(NSDictionary*) learnedShortcuts ;
 
 + (NSString*) composeShortcut: (AXUIElementRef) elementRef;
 
 + (void)showGrowlMessage:(NSString*)clickedActionTitle :(NSString*) theShortcut :(NSString*) clickedApplicationName;
+
++ (BOOL) isAlreadyLearned:(NSString*) theShortcutName :(NSString*) applicationName  :(NSDictionary*) learnedShortcuts;
 
 @end
