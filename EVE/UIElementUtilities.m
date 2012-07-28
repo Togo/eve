@@ -74,7 +74,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         NSArray *menuBarItems = CFBridgingRelease(menuBarArrayRef);
         
         for (id menuBarItemRef in menuBarItems) {
-        [self readAllMenuItems :(AXUIElementRef)menuBarItemRef :allMenuBarShortcutDictionary];
+        [self readAllMenuItems :(__bridge AXUIElementRef)menuBarItemRef :allMenuBarShortcutDictionary];
         }
     }
     
@@ -92,7 +92,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     if (childrenArray.count > 0) {
         for (id oneChildren in childrenArray) {
-            [self readAllMenuItems:(AXUIElementRef)oneChildren :allMenuBarShortcutDictionary ];
+            [self readAllMenuItems:(__bridge AXUIElementRef)oneChildren :allMenuBarShortcutDictionary ];
         }
     }
     else {
@@ -106,7 +106,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     if(title.length > 0 && [self hasHotkey:(AXUIElementRef) menuItemRef])
     {	
-        NSString *titleLowercase = [NSString stringWithFormat:[title lowercaseString]];
+        NSString *titleLowercase = [NSString stringWithFormat:@"%@",[title lowercaseString]];
         if([titleLowercase rangeOfString:@" “"].length > 0) {
             titleLowercase = [titleLowercase substringToIndex:[titleLowercase rangeOfString:@" “"].location];
         } else if([titleLowercase rangeOfString:@" „"].length > 0) {
@@ -170,9 +170,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     CFStringRef stringRef;
     
     AXUIElementCopyAttributeValue( element, (CFStringRef) kAXAttribute, (CFTypeRef*) &stringRef );
-//    NSString  *attribute = (__bridge_transfer NSString*) stringRef;
     
-    //DDLogInfo(@"Read the %@: %@",kAXAttribute,  attribute);
     return (__bridge_transfer NSString*) stringRef;
 }
 

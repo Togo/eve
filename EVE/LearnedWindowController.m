@@ -33,14 +33,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (IBAction) closeButton:(id) sender {
     [NSApp stopModal];
-    DDLogInfo(@"Close the LearnedShortcut Window without doing anything!");
+    DDLogInfo(@"Closed the LearnedShortcut Window without doing anything!");
 }
 
 - (IBAction) globalButton:(id) sender {
 
     /* Get the Array with the shortcut from Growl */
     NSArray *clickContext = [sharedAppDelegate getClickContextArray];
-    DDLogInfo(@"Got this Value to save in learnedShortcut(systemwide): %@", clickContext);
+    DDLogInfo(@"Got this Value to save in learnedShortcut(global): %@", clickContext);
     
     ApplicationData *applicationData = [sharedAppDelegate getApplicationData];
     NSMutableDictionary *applicationDataDictionary = [[sharedAppDelegate getApplicationData] getApplicationDataDictionary];

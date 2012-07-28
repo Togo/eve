@@ -258,7 +258,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void) appFrontSwitched {
       if(!appPause) {
-        NSString     *activeApplicationName = [NSString stringWithFormat:[UIElementUtilities readApplicationName]];
+        NSString     *activeApplicationName = [NSString stringWithFormat:@"%@",[UIElementUtilities readApplicationName]];
         DDLogInfo(@"Active Application: %@", activeApplicationName); 
     
       

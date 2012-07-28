@@ -37,7 +37,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 + (void)treatPerformedAction :(NSEvent*) mouseEvent :(AXUIElementRef) currentUIElement :(NSDictionary*) learnedShortcuts {
     NSString *actionTitle;
-    NSString *applicationName = [NSString stringWithFormat:[UIElementUtilities readApplicationName]];
+    NSString *applicationName = [NSString stringWithFormat:@"%@",[UIElementUtilities readApplicationName]];
     NSString *theShortcutName = nil;
     
         
@@ -69,7 +69,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         AXUIElementRef elementRef = (__bridge AXUIElementRef)[applicationShortcuts valueForKey:actionTitle];
         
         if (elementRef != nil) {            
-            theShortcutName = [NSString stringWithFormat:[self composeShortcut:elementRef]];
+            theShortcutName = [NSString stringWithFormat:@"%@",[self composeShortcut:elementRef]];
             DDLogInfo(@"I found a Shortcut in the MenuBarDictionary: %@", actionTitle);
         }
         else {

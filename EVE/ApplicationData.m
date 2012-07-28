@@ -17,7 +17,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 + (ApplicationData*) loadApplicationData {
     ApplicationData *applicationData = [ApplicationData  alloc];
+    
     NSMutableDictionary *applicationDataDictionary = [[NSMutableDictionary alloc] init];
+    
     NSString     *finalPath =  [[NSBundle mainBundle] pathForResource:@"AdditionalShortcuts"  ofType:@"plist" inDirectory:@""];
     NSDictionary *allAdditionalShortcuts = [[NSDictionary alloc] initWithContentsOfFile:finalPath];
     finalPath = NULL;
