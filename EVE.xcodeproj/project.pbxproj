@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD294DC815C3D8D600477C1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
+		CD294DCE15C3D8D600477C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD294DCC15C3D8D600477C1D /* InfoPlist.strings */; };
+		CD294DD415C3D8D600477C1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD294DD215C3D8D600477C1D /* Credits.rtf */; };
+		CD294DDF15C3D93B00477C1D /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD294DDE15C3D93B00477C1D /* GHUnit.framework */; };
+		CD294DE115C3D99E00477C1D /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD294DDE15C3D93B00477C1D /* GHUnit.framework */; };
+		CD294DE315C3DABB00477C1D /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = CD294DE215C3DABB00477C1D /* GHUnitTestMain.m */; };
+		CD294DE615C3DB2E00477C1D /* ApplicationDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CD294DE515C3DB2E00477C1D /* ApplicationDataTest.m */; };
 		CD64697915C084C700AEECDE /* ApplicationData.h in Headers */ = {isa = PBXBuildFile; fileRef = CD64697715C084C700AEECDE /* ApplicationData.h */; };
 		CD64697A15C084C700AEECDE /* ApplicationData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD64697815C084C700AEECDE /* ApplicationData.m */; };
 		CD6510DE158903AE0046036E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
@@ -50,6 +57,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CD294DE015C3D98D00477C1D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD294DE115C3D99E00477C1D /* GHUnit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDDED833159064260003B331 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +80,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD294DC615C3D8D600477C1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD294DCB15C3D8D600477C1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		CD294DCD15C3D8D600477C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD294DD115C3D8D600477C1D /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		CD294DD315C3D8D600477C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		CD294DDE15C3D93B00477C1D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
+		CD294DE215C3DABB00477C1D /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
+		CD294DE515C3DB2E00477C1D /* ApplicationDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDataTest.m; sourceTree = "<group>"; };
 		CD64697715C084C700AEECDE /* ApplicationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationData.h; sourceTree = "<group>"; };
 		CD64697815C084C700AEECDE /* ApplicationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationData.m; sourceTree = "<group>"; };
 		CD6510D9158903AE0046036E /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,10 +101,6 @@
 		CD6510EB158903AF0046036E /* EVE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EVE-Prefix.pch"; sourceTree = "<group>"; };
 		CD6510ED158903AF0046036E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		CD6510FB158903AF0046036E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		CD651102158903AF0046036E /* EVETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EVETests-Info.plist"; sourceTree = "<group>"; };
-		CD651104158903AF0046036E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CD651106158903AF0046036E /* EVETests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVETests.h; sourceTree = "<group>"; };
-		CD651107158903AF0046036E /* EVETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVETests.m; sourceTree = "<group>"; };
 		CD6511111589043B0046036E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD6511121589043B0046036E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CD651116158904490046036E /* ProcessPerformedAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessPerformedAction.h; sourceTree = "<group>"; };
@@ -121,6 +142,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CD294DC315C3D8D600477C1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD294DC815C3D8D600477C1D /* Cocoa.framework in Frameworks */,
+				CD294DDF15C3D93B00477C1D /* GHUnit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD6510D6158903AE0046036E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,11 +165,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD294DC915C3D8D600477C1D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CD294DE215C3DABB00477C1D /* GHUnitTestMain.m */,
+				CD294DCA15C3D8D600477C1D /* Supporting Files */,
+				CD294DE515C3DB2E00477C1D /* ApplicationDataTest.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CD294DCA15C3D8D600477C1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD294DCB15C3D8D600477C1D /* Tests-Info.plist */,
+				CD294DCC15C3D8D600477C1D /* InfoPlist.strings */,
+				CD294DD115C3D8D600477C1D /* Tests-Prefix.pch */,
+				CD294DD215C3D8D600477C1D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CD6510CE158903AE0046036E = {
 			isa = PBXGroup;
 			children = (
 				CD6510E3158903AE0046036E /* EVE */,
-				CD651100158903AF0046036E /* EVETests */,
+				CD294DC915C3D8D600477C1D /* Tests */,
 				CD6510DC158903AE0046036E /* Frameworks */,
 				CD6510DA158903AE0046036E /* Products */,
 			);
@@ -149,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				CD6510D9158903AE0046036E /* EVE.app */,
+				CD294DC615C3D8D600477C1D /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +208,7 @@
 		CD6510DC158903AE0046036E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD294DDE15C3D93B00477C1D /* GHUnit.framework */,
 				CDC1470D15A36E9900599273 /* Lumberjack */,
 				CDC146AE15A3694D00599273 /* Growl.framework */,
 				CD651145158907650046036E /* ApplicationServices.framework */,
@@ -219,25 +272,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CD651100158903AF0046036E /* EVETests */ = {
-			isa = PBXGroup;
-			children = (
-				CD651106158903AF0046036E /* EVETests.h */,
-				CD651107158903AF0046036E /* EVETests.m */,
-				CD651101158903AF0046036E /* Supporting Files */,
-			);
-			path = EVETests;
-			sourceTree = "<group>";
-		};
-		CD651101158903AF0046036E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CD651102158903AF0046036E /* EVETests-Info.plist */,
-				CD651103158903AF0046036E /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		CDC1470D15A36E9900599273 /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +326,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		CD294DC515C3D8D600477C1D /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD294DDB15C3D8D600477C1D /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				CD294DC215C3D8D600477C1D /* Sources */,
+				CD294DC315C3D8D600477C1D /* Frameworks */,
+				CD294DC415C3D8D600477C1D /* Resources */,
+				CD294DE015C3D98D00477C1D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = CD294DC615C3D8D600477C1D /* Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CD6510D8158903AE0046036E /* EVE */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD65110B158903AF0046036E /* Build configuration list for PBXNativeTarget "EVE" */;
@@ -334,11 +386,21 @@
 			projectRoot = "";
 			targets = (
 				CD6510D8158903AE0046036E /* EVE */,
+				CD294DC515C3D8D600477C1D /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CD294DC415C3D8D600477C1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD294DCE15C3D8D600477C1D /* InfoPlist.strings in Resources */,
+				CD294DD415C3D8D600477C1D /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD6510D7158903AE0046036E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +420,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CD294DC215C3D8D600477C1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD294DE315C3DABB00477C1D /* GHUnitTestMain.m in Sources */,
+				CD294DE615C3DB2E00477C1D /* ApplicationDataTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD6510D5158903AE0046036E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +455,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CD294DCC15C3D8D600477C1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD294DCD15C3D8D600477C1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD294DD215C3D8D600477C1D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD294DD315C3D8D600477C1D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
 		CD6510E6158903AE0046036E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -400,17 +487,45 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		CD651103158903AF0046036E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD651104158903AF0046036E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CD294DDC15C3D8D600477C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CD294DDD15C3D8D600477C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		CD651109158903AF0046036E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -505,6 +620,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CD294DDB15C3D8D600477C1D /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD294DDC15C3D8D600477C1D /* Debug */,
+				CD294DDD15C3D8D600477C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CD6510D3158903AE0046036E /* Build configuration list for PBXProject "EVE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
