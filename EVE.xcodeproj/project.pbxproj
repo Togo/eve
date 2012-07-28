@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD10D2E615C4123900E5870D /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10D2E515C4123900E5870D /* GHUnit.framework */; };
+		CD10D2E715C4123E00E5870D /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD10D2E515C4123900E5870D /* GHUnit.framework */; };
+		CD10D2EE15C438C600E5870D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10D2ED15C438C600E5870D /* Sparkle.framework */; };
+		CD10D2EF15C438D100E5870D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD10D2ED15C438C600E5870D /* Sparkle.framework */; };
+		CD10D2F115C43B3D00E5870D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD10D2F015C43B3D00E5870D /* dsa_pub.pem */; };
 		CD294DC815C3D8D600477C1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
 		CD294DCE15C3D8D600477C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD294DCC15C3D8D600477C1D /* InfoPlist.strings */; };
 		CD294DD415C3D8D600477C1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD294DD215C3D8D600477C1D /* Credits.rtf */; };
-		CD294DDF15C3D93B00477C1D /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD294DDE15C3D93B00477C1D /* GHUnit.framework */; };
-		CD294DE115C3D99E00477C1D /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD294DDE15C3D93B00477C1D /* GHUnit.framework */; };
 		CD294DE315C3DABB00477C1D /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = CD294DE215C3DABB00477C1D /* GHUnitTestMain.m */; };
 		CD294DE615C3DB2E00477C1D /* ApplicationDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CD294DE515C3DB2E00477C1D /* ApplicationDataTest.m */; };
 		CD64697915C084C700AEECDE /* ApplicationData.h in Headers */ = {isa = PBXBuildFile; fileRef = CD64697715C084C700AEECDE /* ApplicationData.h */; };
@@ -59,13 +62,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		CD294DE015C3D98D00477C1D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD294DE115C3D99E00477C1D /* GHUnit.framework in CopyFiles */,
+				CD10D2E715C4123E00E5870D /* GHUnit.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		CDDED833159064260003B331 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -74,18 +77,21 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CDC146B015A3697300599273 /* Growl.framework in CopyFiles */,
+				CD10D2EF15C438D100E5870D /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD10D2E515C4123900E5870D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = EVE/Frameworks/GHUnit.framework; sourceTree = "<group>"; };
+		CD10D2ED15C438C600E5870D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = EVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		CD10D2F015C43B3D00E5870D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		CD294DC615C3D8D600477C1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD294DCB15C3D8D600477C1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		CD294DCD15C3D8D600477C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD294DD115C3D8D600477C1D /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		CD294DD315C3D8D600477C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		CD294DDE15C3D93B00477C1D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
 		CD294DE215C3DABB00477C1D /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
 		CD294DE515C3DB2E00477C1D /* ApplicationDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDataTest.m; sourceTree = "<group>"; };
 		CD64697715C084C700AEECDE /* ApplicationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationData.h; sourceTree = "<group>"; };
@@ -147,7 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD294DC815C3D8D600477C1D /* Cocoa.framework in Frameworks */,
-				CD294DDF15C3D93B00477C1D /* GHUnit.framework in Frameworks */,
+				CD10D2E615C4123900E5870D /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +165,7 @@
 				CD6510DE158903AE0046036E /* Cocoa.framework in Frameworks */,
 				CD65114C15890C730046036E /* ApplicationServices.framework in Frameworks */,
 				CDC146AF15A3694D00599273 /* Growl.framework in Frameworks */,
+				CD10D2EE15C438C600E5870D /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +215,8 @@
 		CD6510DC158903AE0046036E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD294DDE15C3D93B00477C1D /* GHUnit.framework */,
+				CD10D2ED15C438C600E5870D /* Sparkle.framework */,
+				CD10D2E515C4123900E5870D /* GHUnit.framework */,
 				CDC1470D15A36E9900599273 /* Lumberjack */,
 				CDC146AE15A3694D00599273 /* Growl.framework */,
 				CD651145158907650046036E /* ApplicationServices.framework */,
@@ -259,6 +267,7 @@
 		CD6510E4158903AE0046036E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD10D2F015C43B3D00E5870D /* dsa_pub.pem */,
 				CD6510E5158903AE0046036E /* EVE-Info.plist */,
 				CDDE2FE21590777E008C8233 /* eve_icon.icns */,
 				CD6510E6158903AE0046036E /* InfoPlist.strings */,
@@ -414,6 +423,7 @@
 				CDEB2625159B1C76002F77A1 /* Credits.html in Resources */,
 				CDC1472C15A36E9900599273 /* README.txt in Resources */,
 				CDC9154515BC1EFE003CEFAF /* LearnedWindow.xib in Resources */,
+				CD10D2F115C43B3D00E5870D /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +507,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/EVE/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
@@ -516,6 +527,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/EVE/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";

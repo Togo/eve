@@ -84,4 +84,6 @@ extern NSString                *lastSendedShortcut;
 
 - (ApplicationData*) getApplicationData;
 
+- (Boolean) elememtInFilter :(AXUIElementRef) element;
+
 @end

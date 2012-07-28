@@ -74,7 +74,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         [applicationLearnedShortcutDictionary setValue:newApplicationDictionary forKey:[clickContext objectAtIndex:2]];
     }
 
-    
     NSMutableDictionary *theLearnedApplicationDictonary = [applicationLearnedShortcutDictionary valueForKey:[clickContext objectAtIndex:2]];
     /* add the Shortcut to the list */
     [theLearnedApplicationDictonary setValue:@"TRUE" forKey:[clickContext objectAtIndex:1]];

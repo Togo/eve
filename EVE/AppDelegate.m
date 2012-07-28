@@ -220,19 +220,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                                  {
                                                                    // Filter to do not to much work
                                                                    
-                                                                     NSString* role = [UIElementUtilities readkAXAttributeString:[self currentUIElement] :kAXRoleAttribute];
-                                                                     if ( [role isEqualToString:(NSString*)kAXButtonRole] 
-                                                                       || [role isEqualToString:(NSString*)kAXTextFieldRole] 
-                                                                       || [role isEqualToString:(NSString*)kAXCheckBoxRole] 
-                                                                       || [role isEqualToString:(NSString*)kAXMenuButtonRole] 
-                                                                       || [role isEqualToString:(NSString*)kAXMenuItemRole]) 
-                                                                   {
+                                                                     if ([self elememtInFilter: [self currentUIElement]])                                                                                                                        {
                                                                        [ProcessPerformedAction treatPerformedAction:incomingEvent :_currentUIElement :    [applicationDataDictionary valueForKey:learnedShortcuts]];
                                                                    }
-                                                                   else 
-                                                                   {
-                                                                       DDLogInfo(@"UIElement not in the Filter: %@", role);
-                                                               }
                                                             }
                                                           }
                                                         }];
@@ -309,6 +299,28 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
     return applicationData;
 }
 
+- (Boolean) elememtInFilter :(AXUIElementRef) element {
+    NSString* role = [UIElementUtilities readkAXAttributeString:[self currentUIElement] :kAXRoleAttribute];
+    AXUIElementRef parentRef;
+    
+    AXUIElementCopyAttributeValue( element, (CFStringRef) kAXParentAttribute, (CFTypeRef*) &parentRef );
+    NSString *parent = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
+    
+    if ( ([role isEqualToString:(NSString*)kAXButtonRole]
+        || [role isEqualToString:(NSString*)kAXRadioButtonRole]
+        || [role isEqualToString:(NSString*)kAXTextFieldRole]
+        || [role isEqualToString:(NSString*)kAXPopUpButtonRole]
+        || [role isEqualToString:(NSString*)kAXCheckBoxRole]
+        || [role isEqualToString:(NSString*)kAXMenuButtonRole]
+        || [role isEqualToString:(NSString*)kAXMenuItemRole])
+        && ![parent isEqualToString:(NSString*)kAXTabGroupRole])
+    {
+        return true;
+    }
+    
+    DDLogInfo(@"UIElement not in the Filter: %@ Parent:%@", role, parent);
+    return false;
+}
 
 
 
