@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
    <channel>
-      <title>Your Great App's Changelog</title>
-      <link>http://you.com/app/appcast.xml</link>
+      <title>EVE Changelog</title>
+      <link>https://s3.amazonaws.com/hotkeyeve/EVEAppcast.xml</link>
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 1.2.0 (2 new features)</title>
+            <title>Version 1.0.0 (3 new features)</title>
 						<sparkle:releaseNotesLink>
-							http://hotkeyeve.blogspot.de/2012/07/welcome.html						</sparkle:releaseNotesLink>
-            <pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate>
-            <enclosure url="https://github.com/downloads/Togo/eve/EVE.app.zip" sparkle:version="2.0" length="374269" type="application/octet-stream" sparkle:dsaSignature="BAFJW4B6B1K1JyW30nbkBwainOzrN6EQuAh" />
+							http://hotkeyeve.blogspot.de/2012/07/welcome.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Wed, 29 Jan 2012 19:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/downloads/Togo/eve/EVE.app.zip" sparkle:version="1.0.0" length="374269" type="application/octet-stream" sparkle:dsaSignature="BAFJW4B6B1K1JyW30nbkBwainOzrN6EQuAh" />
          </item>
       </channel>
 </rss>

@@ -303,8 +303,12 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
     NSString* role = [UIElementUtilities readkAXAttributeString:[self currentUIElement] :kAXRoleAttribute];
     AXUIElementRef parentRef;
     
-    AXUIElementCopyAttributeValue( element, (CFStringRef) kAXParentAttribute, (CFTypeRef*) &parentRef );
-    NSString *parent = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
+    NSString *parent = [[NSString alloc] init];
+    if(AXUIElementCopyAttributeValue( element, (CFStringRef) kAXParentAttribute, (CFTypeRef*) &parentRef ) == kAXErrorSuccess){
+        // If
+        parent = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
+    }
+    
     
     if ( ([role isEqualToString:(NSString*)kAXButtonRole]
         || [role isEqualToString:(NSString*)kAXRadioButtonRole]

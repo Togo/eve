@@ -144,57 +144,61 @@
 			<key>save as…</key>
 			<string>Command S</string>
 			<key>view page source</key>
-			<string>Option Command U</string>
+			<string>Command Option U</string>
 		</dict>
 		<key>Mail</key>
 		<dict>
 			<key>add sender</key>
-			<string>Shift Command Y</string>
+			<string>Command Shift Y</string>
 			<key>address</key>
-			<string>Option Command A</string>
+			<string>Command Option A</string>
 			<key>attach</key>
-			<string>Shift Command A</string>
+			<string>Command Shift A</string>
 			<key>connect</key>
 			<string>Command K</string>
 			<key>get mail</key>
-			<string>Shift Command N</string>
+			<string>Command Shift N</string>
 			<key>junk</key>
-			<string>Shift Command J</string>
+			<string>Command Shift J</string>
 			<key>note</key>
-			<string>Control Command N</string>
+			<string>Command Control N</string>
 			<key>open</key>
 			<string>Command O</string>
 			<key>print</key>
 			<string>Command P</string>
 			<key>read</key>
-			<string>Shift Command U</string>
+			<string>Command Shift U</string>
 			<key>search</key>
-			<string>Option Command F</string>
+			<string>Command Option F</string>
 			<key>send</key>
-			<string>Shift Command D</string>
+			<string>Command Shift D</string>
 			<key>show</key>
-			<string>Shift Option Command H</string>
+			<string>Command Shift Option H</string>
 			<key>unread</key>
-			<string>Shift Command U</string>
+			<string>Command Shift  U</string>
 		</dict>
 		<key>Safari</key>
 		<dict>
+			<key>reader</key>
+			<string>Command Shift R</string>
+			<key>address and search</key>
+			<string>Command L</string>
 			<key>1password</key>
 			<string>Command  \</string>
 			<key>add bookmark</key>
 			<string>Command D</string>
 			<key>add page</key>
-			<string>Shift Command D</string>
+			<string>Command Shift  D</string>
 			<key>bookmarks</key>
-			<string>Option  Command  B</string>
+			<string>Command Option  B</string>
 			<key>downloads</key>
-			<string>Option Command L</string>
+			<string>Command Option L</string>
 			<key>google</key>
-			<string>Option Command F</string>
+			<string>Command Option F</string>
 			<key>history</key>
-			<string>Option Command 2</string>
+			<string>Command Option 2</string>
 			<key>inspect element</key>
-			<string>Option Command I</string>
+			<string>Command Option I</string>
 			<key>page address</key>
 			<string>Command  L </string>
 			<key>print</key>
@@ -202,24 +206,26 @@
 			<key>print page…</key>
 			<string>Command P</string>
 			<key>reading list</key>
-			<string>Shift Command L</string>
+			<string>Command Shift L</string>
 			<key>reload</key>
 			<string>Command R</string>
 			<key>save page as…</key>
-			<string>Shift Command S</string>
+			<string>Command Shift S</string>
 			<key>search text field</key>
 			<string>Command F</string>
 			<key>show bookmarks</key>
-			<string>Option  Command  B</string>
+			<string>Command Option  B</string>
 			<key>top sites</key>
-			<string>Option Command 1</string>
+			<string>Command Option 1</string>
 			<key>web inspector</key>
-			<string>Option Command I</string>
+			<string>Command Option I</string>
 		</dict>
 		<key>global</key>
 		<dict>
+			<key>close button</key>
+			<string>Command W OR Command Q</string>
 			<key>full screen button</key>
-			<string>Option Command F</string>
+			<string>Command Option F</string>
 			<key>minimize button</key>
 			<string>Command  M</string>
 		</dict>

@@ -61,6 +61,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return [[[NSWorkspace sharedWorkspace] activeApplication] valueForKey:@"NSApplicationName"];
 }
 
+
 + (NSDictionary*) createApplicationMenuBarShortcutDictionary: (AXUIElementRef) appRef {
     NSMutableDictionary *allMenuBarShortcutDictionary = [[NSMutableDictionary alloc] init];
     

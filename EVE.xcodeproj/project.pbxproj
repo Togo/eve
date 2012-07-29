@@ -11,7 +11,7 @@
 		CD10D2E715C4123E00E5870D /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD10D2E515C4123900E5870D /* GHUnit.framework */; };
 		CD10D2EE15C438C600E5870D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10D2ED15C438C600E5870D /* Sparkle.framework */; };
 		CD10D2EF15C438D100E5870D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD10D2ED15C438C600E5870D /* Sparkle.framework */; };
-		CD10D2F115C43B3D00E5870D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD10D2F015C43B3D00E5870D /* dsa_pub.pem */; };
+		CD1CCE1215C5137C00B17084 /* EVEAppcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = CD1CCE1115C5137C00B17084 /* EVEAppcast.xml */; };
 		CD294DC815C3D8D600477C1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6510DD158903AE0046036E /* Cocoa.framework */; };
 		CD294DCE15C3D8D600477C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD294DCC15C3D8D600477C1D /* InfoPlist.strings */; };
 		CD294DD415C3D8D600477C1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD294DD215C3D8D600477C1D /* Credits.rtf */; };
@@ -86,7 +86,7 @@
 /* Begin PBXFileReference section */
 		CD10D2E515C4123900E5870D /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = EVE/Frameworks/GHUnit.framework; sourceTree = "<group>"; };
 		CD10D2ED15C438C600E5870D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = EVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
-		CD10D2F015C43B3D00E5870D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		CD1CCE1115C5137C00B17084 /* EVEAppcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EVEAppcast.xml; sourceTree = "<group>"; };
 		CD294DC615C3D8D600477C1D /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD294DCB15C3D8D600477C1D /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		CD294DCD15C3D8D600477C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -251,7 +251,6 @@
 				CD6511121589043B0046036E /* AppDelegate.m */,
 				CD651116158904490046036E /* ProcessPerformedAction.h */,
 				CD651117158904490046036E /* ProcessPerformedAction.m */,
-				CDDED831159062C40003B331 /* AdditionalShortcuts.plist */,
 				CD651188158A51060046036E /* Growl Registration Ticket.growlRegDict */,
 				CD651137158904E50046036E /* UIElementUtilities.h */,
 				CD651138158904E50046036E /* UIElementUtilities.m */,
@@ -267,7 +266,8 @@
 		CD6510E4158903AE0046036E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD10D2F015C43B3D00E5870D /* dsa_pub.pem */,
+				CDDED831159062C40003B331 /* AdditionalShortcuts.plist */,
+				CD1CCE1115C5137C00B17084 /* EVEAppcast.xml */,
 				CD6510E5158903AE0046036E /* EVE-Info.plist */,
 				CDDE2FE21590777E008C8233 /* eve_icon.icns */,
 				CD6510E6158903AE0046036E /* InfoPlist.strings */,
@@ -423,7 +423,7 @@
 				CDEB2625159B1C76002F77A1 /* Credits.html in Resources */,
 				CDC1472C15A36E9900599273 /* README.txt in Resources */,
 				CDC9154515BC1EFE003CEFAF /* LearnedWindow.xib in Resources */,
-				CD10D2F115C43B3D00E5870D /* dsa_pub.pem in Resources */,
+				CD1CCE1215C5137C00B17084 /* EVEAppcast.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +593,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -615,7 +614,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
