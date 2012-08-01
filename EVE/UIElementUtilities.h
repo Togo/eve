@@ -32,6 +32,8 @@ extern NSString *const UIElementUtilitiesNoDescription;
 // Screen geometry conversions
 + (CGPoint)carbonScreenPointFromCocoaScreenPoint:(NSPoint)cocoaPoint;
 
++ (Boolean) isWebArea:(AXUIElementRef) element;
+
 + (Boolean) hasHotkey :(AXUIElementRef) menuItemRef;
 
 + (NSString*) readkAXAttributeString:(AXUIElementRef)element :(CFStringRef) kAXAttribute;

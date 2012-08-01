@@ -37,7 +37,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (IBAction) globalButton:(id) sender {
-
     /* Get the Array with the shortcut from Growl */
     NSArray *clickContext = [sharedAppDelegate getClickContextArray];
     DDLogInfo(@"Got this Value to save in learnedShortcut(global): %@", clickContext);
@@ -49,7 +48,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSMutableDictionary *globalLearnedShortcuts = [learnedShortcutDictionary valueForKey:globalLearnedShortcut];
     
     /* add the Shortcut to the list */
-    [globalLearnedShortcuts setValue:@"TRUE" forKey:[clickContext objectAtIndex:1]];
+    [globalLearnedShortcuts setValue:[clickContext objectAtIndex:0] forKey:[clickContext objectAtIndex:1]];
     
     [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
     
@@ -76,7 +75,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     NSMutableDictionary *theLearnedApplicationDictonary = [applicationLearnedShortcutDictionary valueForKey:[clickContext objectAtIndex:2]];
     /* add the Shortcut to the list */
-    [theLearnedApplicationDictonary setValue:@"TRUE" forKey:[clickContext objectAtIndex:1]];
+    [theLearnedApplicationDictonary setValue:[clickContext objectAtIndex:0] forKey:[clickContext objectAtIndex:1]];
     
     [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
     

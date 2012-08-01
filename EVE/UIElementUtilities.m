@@ -133,8 +133,23 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
     else 
     {
-        return false;
+     return false;
     }
+}
+
++ (Boolean) isWebArea:(AXUIElementRef) element {
+    AXUIElementRef parentRef = element;
+    
+    while ( AXUIElementCopyAttributeValue( parentRef, (CFStringRef) kAXParentAttribute, (CFTypeRef*) &parentRef ) == kAXErrorSuccess)
+    {
+        NSString *parentRole = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
+        if ([parentRole isEqualToString:@"AXWebArea"]) {
+            DDLogInfo(@"There is WebArea in the UIElement. The filter catch this action!");
+            return true;
+        }
+    }
+    
+    return false;
 }
 
 + (NSString*) titleOfActionUniversal:(AXUIElementRef)element {   

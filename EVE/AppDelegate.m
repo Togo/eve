@@ -133,10 +133,13 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self setClickContextArray: clickedContext];
         
         NSWindow *learnedWindow = [learnedWindowController window];
+        [learnedWindow makeKeyAndOrderFront:self];
+        [learnedWindow setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
         
         [NSApp runModalForWindow: learnedWindow];
         
         [NSApp endSheet: learnedWindow];
+        [NSApp activateIgnoringOtherApps:YES];
         
         [learnedWindow orderOut: self];
     }
@@ -309,15 +312,17 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
         parent = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
     }
     
+
+                            
     
     if ( ([role isEqualToString:(NSString*)kAXButtonRole]
-        || [role isEqualToString:(NSString*)kAXRadioButtonRole]
+        || ([role isEqualToString:(NSString*)kAXRadioButtonRole] && ![parent isEqualToString:(NSString*)kAXTabGroupRole])
         || [role isEqualToString:(NSString*)kAXTextFieldRole]
         || [role isEqualToString:(NSString*)kAXPopUpButtonRole]
         || [role isEqualToString:(NSString*)kAXCheckBoxRole]
         || [role isEqualToString:(NSString*)kAXMenuButtonRole]
         || [role isEqualToString:(NSString*)kAXMenuItemRole])
-        && ![parent isEqualToString:(NSString*)kAXTabGroupRole])
+        && ![UIElementUtilities isWebArea:element])
     {
         return true;
     }

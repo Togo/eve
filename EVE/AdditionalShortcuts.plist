@@ -67,6 +67,12 @@
 		</dict>
 		<key>Safari</key>
 		<dict>
+			<key>reader</key>
+			<string>Command Shift R</string>
+			<key>schließen-taste</key>
+			<string>Command W OR Command Q</string>
+			<key>adresse und suchen</key>
+			<string>Command L</string>
 			<key>1password</key>
 			<string>Command  \</string>
 			<key>downloads</key>

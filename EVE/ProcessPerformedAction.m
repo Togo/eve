@@ -77,7 +77,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         }
     }
     
-        if (theShortcutName.length > 0 && [self isAlreadyLearned:theShortcutName :applicationName :learnedShortcuts]) {
+        if (theShortcutName.length > 0 && [self isAlreadyLearned:theShortcutName :applicationName :learnedShortcuts :actionTitle]) {
         DDLogInfo(@"Matched Shortcut: %@", theShortcutName);
         [self showGrowlMessage:actionTitle :theShortcutName :applicationName];
     }
@@ -167,10 +167,10 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 + (void)showGrowlMessage:(NSString*)clickedActionTitle :(NSString*) theShortcut :(NSString*) clickedApplicationName {
     if (![theShortcut isEqualToString:lastSendedShortcut]) {
         
-        
         [GrowlApplicationBridge notifyWithTitle:@"" description:theShortcut notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:[NSArray arrayWithObjects:clickedActionTitle, theShortcut, clickedApplicationName, nil]];
         
         lastSendedShortcut = theShortcut;
+            DDLogInfo(@"Display the shortcut: %@", theShortcut);
     }
     else {
         DDLogInfo(@"This Shortcut has already been send. Don't bother me!!!");
@@ -179,21 +179,20 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 
-+ (BOOL) isAlreadyLearned:(NSString*) theShortcutName :(NSString*) applicationName  :(NSDictionary*) learnedShortcuts {
++ (BOOL) isAlreadyLearned:(NSString*) theShortcutName :(NSString*) applicationName  :(NSDictionary*) learnedShortcuts :(NSString*)actionTitle  {
+    
     NSDictionary *globalLearnedShortcutDictionary = [learnedShortcuts valueForKey:globalLearnedShortcut];
-    BOOL globalLearned = [((NSString*)[globalLearnedShortcutDictionary valueForKey:theShortcutName]) boolValue];
+   NSString *savedActionNameGlobal = ((NSString*)[globalLearnedShortcutDictionary valueForKey:theShortcutName]);
     
     NSDictionary *appliciationLearnedShortcutDictionary = [[learnedShortcuts valueForKey:applicationLearnedShortcut] valueForKey:applicationName];
-    BOOL applicationLearned = [((NSString*)[appliciationLearnedShortcutDictionary valueForKey:theShortcutName]) boolValue];
+    NSString *savedActionNameApplication = ((NSString*)[appliciationLearnedShortcutDictionary valueForKey:theShortcutName]);
     
     
-    
-    if(globalLearned || applicationLearned)
+    // Check first that the String value is not null, after that check wether the action that had been performed is equal to
+    if( ( savedActionNameGlobal != NULL && [savedActionNameGlobal isEqualToString:actionTitle] )
+        || (savedActionNameApplication != NULL && [savedActionNameApplication isEqualToString:actionTitle]) )
     {
-        
-        DDLogInfo(@"GlobalLearned: %d", globalLearned);
-        DDLogInfo(@"ApplicationLearned: %d", applicationLearned);
-        DDLogInfo(@"You marked this Shortcut as learned! If thats not right, check the learnedShortcutDictionary in the ApplicationSupport/EVE folder! Delete the entry or set it to false");
+        DDLogInfo(@"You marked this Shortcut as learned! If thats not right, check the learnedShortcutDictionary in the ApplicationSupport/EVE folder! Delete the entry!");
         return false;
     }
     

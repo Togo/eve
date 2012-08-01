@@ -14,14 +14,18 @@
 
 @interface LearnedWindowController : NSWindowController {
         AppDelegate     *sharedAppDelegate;
+        IBOutlet NSTextField *actionTitle;
+        IBOutlet NSTextField *matchedShortcut;
 }
 
 
--(IBAction) closeButton:(id) sender;
+- (IBAction) closeButton:(id) sender;
 
--(IBAction) globalButton:(id) sender;
+- (IBAction) globalButton:(id) sender;
 
--(IBAction) applicationButton:(id) sender;
+- (IBAction) applicationButton:(id) sender;
+
+
 
 - (void) setAppDelegate:(AppDelegate*) appDelegate;
 
