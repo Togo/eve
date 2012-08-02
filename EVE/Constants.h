@@ -38,4 +38,6 @@ extern NSString *const learnedShortcuts;
 
 extern NSString *const additionalShortcuts;
 
+extern NSString *const DISABLED_APPLICATIONS;
+
 @end

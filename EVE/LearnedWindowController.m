@@ -50,7 +50,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     /* add the Shortcut to the list */
     [globalLearnedShortcuts setValue:[clickContext objectAtIndex:0] forKey:[clickContext objectAtIndex:1]];
     
-    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
+    [ApplicationData saveDictionary:[applicationData getLearnedShortcutDictionaryPath] :learnedShortcutDictionary];
     
     [NSApp stopModal];
 }
@@ -77,11 +77,27 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     /* add the Shortcut to the list */
     [theLearnedApplicationDictonary setValue:[clickContext objectAtIndex:0] forKey:[clickContext objectAtIndex:1]];
     
-    [ApplicationData saveLearnedShortcutDictionary:applicationData :learnedShortcutDictionary];
+    [ApplicationData saveDictionary:[applicationData getLearnedShortcutDictionaryPath] :learnedShortcutDictionary];
     
     [NSApp stopModal];
 }
 
+
+- (IBAction) disableButton:(id) sender {
+    /* Get the Array with the shortcut from Growl */
+    NSArray *clickContext = [sharedAppDelegate getClickContextArray];
+    DDLogInfo(@"Got this Value to disable a eve for a application: %@", clickContext);
+    
+    ApplicationData *applicationData = [sharedAppDelegate getApplicationData];
+    NSMutableDictionary *applicationDataDictionary = [[sharedAppDelegate getApplicationData] getApplicationDataDictionary];
+    NSMutableDictionary *disabledApplicationDictionary = [applicationDataDictionary valueForKey:DISABLED_APPLICATIONS];
+    
+    [disabledApplicationDictionary setValue:@"TRUE" forKey:[clickContext objectAtIndex:2]];
+    
+    [ApplicationData saveDictionary:[applicationData getDisabledDictionaryDictionaryPath] :disabledApplicationDictionary];
+    
+    [NSApp stopModal];
+}
 
 
 - (void) setAppDelegate:(AppDelegate*) appDelegate {

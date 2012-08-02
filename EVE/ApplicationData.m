@@ -24,6 +24,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSDictionary *allAdditionalShortcuts = [[NSDictionary alloc] initWithContentsOfFile:finalPath];
     finalPath = NULL;
     
+    // Get the learnedShortcut Dictionary
     finalPath = [[NSFileManager defaultManager] applicationSupportDirectory];
     finalPath = [finalPath stringByAppendingPathComponent:@"learnedShortcuts.plist"];
     NSMutableDictionary *learnedShortcutsDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
@@ -41,18 +42,36 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         [learnedShortcutsDictionary writeToFile:finalPath atomically: YES];
     }
     
+    finalPath = NULL;
+    // Get the disabled Application Dictionary
+    finalPath = [[NSFileManager defaultManager] applicationSupportDirectory];
+    finalPath = [finalPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", DISABLED_APPLICATIONS, @".plist"]];
+    NSMutableDictionary *disabledApplicationDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:finalPath];
+    
+    // Set the path to save the dictionary if the user disable a Application
+    [applicationData setDisabledDictionaryDictionaryPath: finalPath];
+    
+    if (!disabledApplicationDictionary) { // If you can't find the dictionary create a new one!
+        DDLogInfo(@"Can't find disabledApplicationDictionary. I create a new one");
+        disabledApplicationDictionary = [[NSMutableDictionary alloc] init];
+        
+        [disabledApplicationDictionary writeToFile:finalPath atomically: YES];
+    }
+    
+    
+    // ADD the Dictionarys to the main dictionary
     [applicationDataDictionary setValue:allAdditionalShortcuts forKey:@"applicationShortcuts"];
     [applicationDataDictionary setValue:learnedShortcutsDictionary forKey:learnedShortcuts];
+    [applicationDataDictionary setValue:disabledApplicationDictionary forKey:DISABLED_APPLICATIONS];
     [applicationData setApplicationDataDictionary: applicationDataDictionary];
     
     return applicationData;
 }
 
-+ (void) saveLearnedShortcutDictionary :(ApplicationData*) applicationData :(NSMutableDictionary*) applicationDataDictionary {
-    NSString *path =    [applicationData getLearnedShortcutDictionaryPath];
++ (void) saveDictionary :(NSString*) path :(NSMutableDictionary*) dic  {
     if(path)
     {
-     [applicationDataDictionary writeToFile:path atomically: YES];
+     [dic writeToFile:path atomically: YES];
     }
     else
     {
@@ -65,6 +84,13 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 }
 
+- (void) setDisabledDictionaryDictionaryPath :(NSString*) finalPath {
+    disabledDictionaryDictionaryPath = finalPath;
+}
+
+- (NSString*) getDisabledDictionaryDictionaryPath {
+    return disabledDictionaryDictionaryPath;
+}
 
 - (void) setLearnedShortcutDictionaryPath :(NSString*) finalPath {
     learnedShortcutDictionaryPath = finalPath;

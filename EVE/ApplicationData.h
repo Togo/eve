@@ -9,15 +9,20 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ApplicationData : NSObject {
-    NSString            *learnedShortcutDictionaryPath;
-    NSMutableDictionary *applicationDataDictionary;
+    NSString                *learnedShortcutDictionaryPath;
+    NSString                * disabledDictionaryDictionaryPath;
+    NSMutableDictionary     *applicationDataDictionary;
 }
 
 + (ApplicationData*) loadApplicationData;
 
-+ (void) saveLearnedShortcutDictionary :(ApplicationData*) applicationData :(NSMutableDictionary*) applicationDataDictionary;
++ (void) saveDictionary :(NSString*) path :(NSMutableDictionary*) dic;
 
 - (void) setLearnedShortcutDictionaryPath: (NSString*) finalPath;
+
+- (void) setDisabledDictionaryDictionaryPath :(NSString*) finalPath;
+
+- (NSString*) getDisabledDictionaryDictionaryPath;
 
 - (NSString*) getLearnedShortcutDictionaryPath;
 

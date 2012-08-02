@@ -25,7 +25,7 @@
 
 - (IBAction) applicationButton:(id) sender;
 
-
+- (IBAction) disableButton:(id) sender;
 
 - (void) setAppDelegate:(AppDelegate*) appDelegate;
 

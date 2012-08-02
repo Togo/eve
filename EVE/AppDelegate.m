@@ -212,17 +212,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                            handler:^(NSEvent *incomingEvent) {   
                             
                                                                if(!appPause) {
-                                                            
-                                                                   
-                                                                   // listing important
-                                                                  
+                                                                                                                               
+                                                                   // listing important                                                                  
                                                                    [self updateCurrentUIElement];
                                                                  
                                                                    
                                                                    if([self currentUIElement])
                                                                  {
-                                                                   // Filter to do not to much work
-                                                                   
+                                                                     // Filter to do not to much work
                                                                      if ([self elememtInFilter: [self currentUIElement]])                                                                                                                        {
                                                                        [ProcessPerformedAction treatPerformedAction:incomingEvent :_currentUIElement :    [applicationDataDictionary valueForKey:learnedShortcuts]];
                                                                    }
@@ -252,9 +249,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void) appFrontSwitched {
       if(!appPause) {
         NSString     *activeApplicationName = [NSString stringWithFormat:@"%@",[UIElementUtilities readApplicationName]];
-        DDLogInfo(@"Active Application: %@", activeApplicationName); 
-    
-      
+        DDLogInfo(@"Active Application: %@", activeApplicationName);
+        NSString *applicationDisabled = [[applicationDataDictionary valueForKey:DISABLED_APPLICATIONS] valueForKey:activeApplicationName];
+          if(applicationDisabled == nil) {
+              applicationDisabled = @"False";
+          }
+          
+        if(![applicationDisabled isEqualToString:@"TRUE"])
+        {
         NSMutableDictionary *applicationShortcuts = [applicationDataDictionary valueForKey:@"applicationShortcuts"];
         
         AXUIElementRef appRef = AXUIElementCreateApplication( [[[[NSWorkspace sharedWorkspace] activeApplication] valueForKey:@"NSApplicationProcessIdentifier"] intValue] );
@@ -274,6 +276,11 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         DDLogInfo(@"ShortcutDictionary for %@ created", activeApplicationName); 
         DDLogInfo(@"I create a menuBarShortcutDictionary   with %lu Items", menuBarShortcuts.count);
         CFRelease(appRef);
+        }
+        else
+        {
+            DDLogInfo(@"You disabled this Application: %@", activeApplicationName);
+        }
     }
 }
 
@@ -311,10 +318,7 @@ static OSStatus AppFrontSwitchedHandler(EventHandlerCallRef inHandlerCallRef, Ev
         // If
         parent = [UIElementUtilities readkAXAttributeString:parentRef :kAXRoleAttribute];
     }
-    
-
                             
-    
     if ( ([role isEqualToString:(NSString*)kAXButtonRole]
         || ([role isEqualToString:(NSString*)kAXRadioButtonRole] && ![parent isEqualToString:(NSString*)kAXTabGroupRole])
         || [role isEqualToString:(NSString*)kAXTextFieldRole]
